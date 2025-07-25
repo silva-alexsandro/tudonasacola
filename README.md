@@ -1,4 +1,4 @@
-# 🛒 LCC-App — Lista de Compras Compartilhável
+# LCC-App — Lista de Compras Compartilhável
 
 Aplicação web simples e responsiva para criar, organizar e compartilhar listas de compras com praticidade.
 
@@ -6,27 +6,26 @@ Aplicação web simples e responsiva para criar, organizar e compartilhar listas
 
 ## 📌 Visão Geral
 
-**LCC-App** (Lista de Compras Compartilhável) foi criado para facilitar a rotina de pessoas que fazem compras no dia a dia, permitindo que elas criem múltiplas listas, filtrem itens por categoria e compartilhem com facilidade por texto ou QR Code — tudo isso sem necessidade de cadastro ou conexão com servidor.
+**LCC-App** (Lista de Compras Compartilhável) foi criado para facilitar a rotina de pessoas que fazem compras no dia a dia, permitindo que elas criem múltiplas listas e compartilhem com facilidade por texto ou QR Code — tudo isso sem necessidade de cadastro ou conexão com servidor.
 
 ---
 
 ## 🚀 Funcionalidades
 
-✅ Criar e nomear listas de compras  
-✅ Adicionar, editar, excluir e marcar itens como "comprados"  
-✅ Atribuir **categorias** a cada item e aplicar filtros  
-✅ Múltiplas listas salvas no `localStorage`  
-✅ Interface responsiva e com **Dark Mode**  
-✅ Exportar lista para **texto compartilhável**  
-✅ Gerar **QR Code** da lista  
-✅ Funciona totalmente offline
+* [ ] Criar e nomear listas de compras  
+* [ ] Adicionar, editar, excluir e marcar itens como "comprados"  
+* [ ] Atribuir **categorias** a cada item e aplicar filtros  
+* [ ] Múltiplas listas salvas no `localStorage`  
+* [ ] Interface responsiva e com **Dark Mode**  
+* [ ] Exportar lista para **texto compartilhável**  
+* [ ] Gerar **QR Code** da lista  
+* [ ] Funciona totalmente offline
 
 ---
 
 ## 🖥️ Tecnologias Utilizadas
 
 - **HTML5** – Estrutura semântica
-- **Sass (SCSS)** – Estilização com pré-processador
 - **JavaScript (ES6)** – Lógica do app
 - **jQuery** – Manipulação de DOM, eventos e efeitos
 - **localStorage** – Persistência de dados no navegador
@@ -34,14 +33,17 @@ Aplicação web simples e responsiva para criar, organizar e compartilhar listas
 
 ---
 
-## 📷 Imagens (em breve)
-
-
 ---
 
 ## 🔧 Como Usar
 
-1. **Clone o repositório**
+Click e utilize o [applcc](https://applcc.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5bd346eb-8142-458c-b40e-51a5c05baae6/deploy-status)](https://app.netlify.com/projects/applcc/deploys)
+
+
+## Colabore
+**Clone o repositório**
 ```bash
 git clone https://github.com/silva-alexsandro/lcc-app
 cd lcc-app
