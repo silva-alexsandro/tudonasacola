@@ -1,22 +1,33 @@
+@import url('../components/logo.css');
+
+#header {
+  padding: 1.2rem 5rem;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.41);
+}
+
 .container {
   padding: var(--space-lg);
-  margin: 0px auto;
-  margin-top: 30px;
+  margin: 3rem auto;
   width: 100%;
   max-width: 40rem;
   border-radius: var(--radius-md);
   background: var(--gray2);
   color: var(--gray7);
 }
+
 .container__title {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2.4rem;
 }
+
 .container__intput_area {
   gap: var(--space-sm);
   flex-direction: column;
 }
+
 #list_input {
   padding: var(--space-sm);
   border-radius: var(--radius-sm);
@@ -24,15 +35,19 @@
   flex: 1;
   width: 100%;
 }
+
 .wrapper_list {
   margin-top: var(--space-lg);
 }
+
 .wrapper_list__title:first-child {
   margin-bottom: var(--space-md);
 }
+
 .wrapper_list__title:not(:first-child) {
   margin: var(--space-md) 0;
 }
+
 .wrapper_list__daily_list li {
   display: flex;
   align-items: center;
@@ -42,6 +57,7 @@
   border-radius: var(--radius-xs);
   margin-bottom: var(--space-md);
 }
+
 .wrapper_list__daily_list li span {
   max-width: 30rem;
   /* ajuste conforme o layout */
@@ -49,10 +65,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .wrapper_list__daily_list li.done span {
   text-decoration: line-through;
   color: #aaa;
 }
+
 .remove-btn {
   background: none;
   border: none;
@@ -60,11 +78,15 @@
   font-size: 16px;
   cursor: pointer;
 }
+
 .flex {
   display: flex;
 }
 
 @media (min-width: 1024px) {
+  #header {
+    padding: 2.4rem 15rem;
+  }
   .container {
     max-width: 60rem;
   }

@@ -1,0 +1,16 @@
+.wrapper_logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.wrapper_logo span {
+  width: 7rem;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.logo {
+  font-size: 4rem;
+}
