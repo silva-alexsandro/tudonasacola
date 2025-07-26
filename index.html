@@ -5,23 +5,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LCC | Home</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <!-- icons  -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
   <!-- CSS -->
   <link rel="stylesheet" href="./src/css/main.css">
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
-<body>
+<body class="">
 
-  <div class="todo-container">
-    <h1>Minhas Listas</h1>
-    <div class="input-area">
-      <input type="text" id="todo-input" placeholder="Digite um item...">
-      <button id="add-btn">Adicionar</button>
+  <main class="container">
+    <h2 class="container__title">Minhas Listas</h2>
+    <div class="container__intput_area flex">
+      <input type="text" id="list_input" placeholder="Adicionar uma lista...">
+      <button id="add-btn" class="btn">
+        <i class="icon ph ph-plus"></i>
+        Nova lista
+      </button>
     </div>
-    <ul id="todo-list"></ul>
-  </div>
+    <section class="wrapper_list">
+      <ul id="merc-list" class="wrapper_list__daily_list"></ul>
+    </section>
+    <!-- <section class="wrapper_list">
+      <h3 class="wrapper_list__title">13.08.25</h3>
+      <ul id="lists" class="wrapper_list__daily_list">
+        <li>
+          <span>lista de compras do guanabara de campo grande</span>
+          <button class="remove-btn">×</button>
+        </li>
+        <li>
+          <span>Teste</span>
+          <button class="remove-btn">×</button>
+        </li>
+      </ul>
 
+      <h3 class="wrapper_list__title">12.08.25</h3>
+      <ul class="wrapper_list__daily_list">
+        <li>
+          <span>Teste</span>
+          <button class="remove-btn">×</button>
+        </li>
+        <li>
+          <span>Teste</span>
+          <button class="remove-btn">×</button>
+        </li>
+      </ul>
+    </section> -->
+  </main>
   <script type="module" src="./src/js/main.js"></script>
 </body>
 

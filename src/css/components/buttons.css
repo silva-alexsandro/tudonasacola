@@ -1,0 +1,28 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  border-radius: var(--radius-md);
+  padding: var(--space-md)var(--space-lg);
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: ease-in-out .2s;
+  background-color: var(--gray7);
+  color: var(--gray2);
+}
+.btn .icon {
+  font-size: 1.8rem;
+}
+body.dark_mode .btn {
+  border: none;
+  background-color: var(--gray2);
+  color: var(--white);
+}
+body.dark_mode .btn:hover {
+  background-color: var(--gray1);
+}
+.btn:hover {
+  background-color: var(--gray5);
+}

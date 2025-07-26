@@ -1,0 +1,10 @@
+.dark_mode {
+  background-color: var(--gray1);
+  color: var(--gray7);
+}
+body.dark_mode .container {
+  background: var(--white);
+  color: var(--gray1);
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(151, 151, 151, 0.5);
+}
