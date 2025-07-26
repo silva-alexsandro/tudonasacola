@@ -12,6 +12,10 @@
   background-color: var(--gray7);
   color: var(--gray2);
 }
+#add-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 .btn .icon {
   font-size: 1.8rem;
 }
