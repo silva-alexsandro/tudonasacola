@@ -8,3 +8,29 @@ body.dark_mode .container {
   font-weight: 700;
   box-shadow: 0 4px 10px rgba(151, 151, 151, 0.5);
 }
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.toggle label svg#sun {
+  width: 3.2rem;
+  fill: var(--gray7);
+}
+.toggle label svg#moon {
+  width: 3.2rem;
+  fill: var(--gray1);
+}
+.toggle label svg#sun,
+.toggle label svg#moon {
+  transition: .3s;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}

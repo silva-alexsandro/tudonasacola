@@ -1,4 +1,6 @@
+import { darkMode } from "./theme/theme.js";
 $(document).ready(function () {
+  darkMode();
   // Adicionar nova tarefa
   $('#add-btn').click(function () {
     const task = $('#list_input').val().trim();
