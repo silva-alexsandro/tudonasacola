@@ -12,15 +12,18 @@ Aplicação web simples e responsiva para criar, organizar e compartilhar listas
 
 ## 🚀 Funcionalidades
 
-* [ ] Criar e nomear listas de compras  
-* [ ] Adicionar, editar, excluir e marcar itens como "comprados"  
-* [ ] Atribuir **categorias** a cada item e aplicar filtros  
-* [ ] Múltiplas listas salvas no `localStorage`  
-* [ ] Interface responsiva e com **Dark Mode**  
-* [ ] Exportar lista para **texto compartilhável**  
-* [ ] Gerar **QR Code** da lista  
+* [x] Criar e nomear listas de compras
+* [ ] Adicionar, editar, excluir e marcar itens como "comprados"
+* [ ] Múltiplas listas salvas no `localStorage`
+* [x] Interface responsiva e com Dark Mode
+* [x] Dark Mode sendo salvo em localStorage
+* [ ] Exportar lista para texto compartilhável
+* [ ] Gerar QR Code da lista
 * [ ] Funciona totalmente offline
 
+- futuro
+* [ ] Atribuir categorias a cada item e aplicar filtros
+* [ ] Verificar mercados proximo
 ---
 
 ## 🖥️ Tecnologias Utilizadas
