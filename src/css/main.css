@@ -1,5 +1,2 @@
-@import url('./base/reset.css');
 @import url('./base/base.css');
-@import url('./layout/layout.css');
-@import url('./components/buttons.css');
-@import url('./themes/dark_mode.css');
+@import url('./pages/home.css');

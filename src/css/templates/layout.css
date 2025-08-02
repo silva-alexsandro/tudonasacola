@@ -1,5 +1,24 @@
-@import url('../components/logo.css');
+@import url('./header.css');
+@import url('../components/button.css');
+@import url('../components/circle.css');
+@import url('../components/icon.css');
+@import url('../components/line.css');
+@import url('../components/modal.css');
+@import url('../themes/dark_mode.css');
+@import url('../utils/util.css');
 
+.error {
+  color: var(--red-dark);
+  font-size: 14px;
+  padding: .4rem;
+  display: block;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*
 #header {
   padding: 1.2rem 5rem;
   align-items: center;
@@ -63,8 +82,8 @@ body{
 }
 
 .wrapper_list__daily_list li span {
-  max-width: 30rem;
-  /* ajuste conforme o layout */
+  max-width: 30rem;}
+  /* ajuste conforme o layout 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -97,4 +116,4 @@ body{
     gap: var(--space-sm);
     flex-direction: row;
   }
-}
+} */

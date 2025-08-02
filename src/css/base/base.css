@@ -1,3 +1,4 @@
+@import url('./reset.css');
 :root {
   --gray1: #1B1D1E;
   --gray2: #333638;
@@ -14,6 +15,7 @@
   --green-mind: #cbe4b4;
   --green-light: #e5f0db;
 
+  font-size: 62.5%;
   /* Border radius */
   --radius-xs: 4px;
   --radius-sm: 6px;
@@ -28,8 +30,6 @@
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
-
-  font-size: 62.5%;
 }
 *,
 *::before,
@@ -38,21 +38,16 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  /* para navegadores antigos baseados em WebKit */
   -moz-box-sizing: border-box;
-  /* para versões antigas do Firefox */
 }
 html,
 body {
   font-family: "Nunito", sans-serif;
-  height: 100%;
   font-size: 1.6rem;
   line-height: 1.3;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  /* para navegadores antigos baseados em WebKit */
   -moz-box-sizing: border-box;
-  /* para versões antigas do Firefox */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;

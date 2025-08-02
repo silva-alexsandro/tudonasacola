@@ -34,8 +34,20 @@ input[type='checkbox'] {
 .hidden {
   display: none;
 }
-body.dark_mode #header {
+body.dark_mode #header,
+body.dark_mode .circle {
   box-shadow: 0px 2px 3px 0px #eeecec69;
   -webkit-box-shadow: 0px 2px 3px 0px #eeecec69;
   -moz-box-shadow: 0px 2px 3px 0px #eeecec69;
+}
+body.dark_mode .circle:hover {
+  box-shadow: 0px 0px 2px 0px #eeecec69;
+  -webkit-box-shadow: 0px 0px 2px 0px #eeecec69;
+  -moz-box-shadow: 0px 0px 2px 0px #eeecec69;
+}
+body.dark_mode .btn {
+  color: var(--white);
+}
+body.dark_mode .boxImage img{
+  filter: invert(0.9);
 }
