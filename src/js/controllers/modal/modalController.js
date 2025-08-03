@@ -1,5 +1,5 @@
 import { EventBus } from "../../events/eventBus.js";
-import { ModalView } from "../../views/modal/modaView.js";
+import { ModalView } from "../../views/modal/modalView.js";
 
 export class ModalController {
   constructor() {
