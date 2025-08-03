@@ -1,4 +1,5 @@
 @import url('./reset.css');
+
 :root {
   --gray1: #1B1D1E;
   --gray2: #333638;
@@ -8,9 +9,9 @@
   --gray6: #dddedf;
   --gray7: #fafafa;
   --white: #fff;
-  --red-dark: #bf3b44;
-  --red-mind: #f3babd;
-  --red-light: #f4e6e7;
+  --red-dark: #ff4d4d;
+  --red-mind: #bf3b44;
+  --red-light: #bf3b4480;
   --green-dark: #639339;
   --green-mind: #cbe4b4;
   --green-light: #e5f0db;
@@ -31,6 +32,7 @@
   --space-lg: 24px;
   --space-xl: 32px;
 }
+
 *,
 *::before,
 *::after {
@@ -40,6 +42,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
+
 html,
 body {
   font-family: "Nunito", sans-serif;

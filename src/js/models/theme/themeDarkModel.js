@@ -1,4 +1,4 @@
-import { loadInLocalStorageItem, saveInLocalStorage } from "../db/handleLocalStorage.js";
+import { loadInLocalStorageItem, saveInLocalStorage } from "../../db/handleLocalStorage.js";
 
 const KEY_THEME = 'theme';
 export class ThemeDarkModel {

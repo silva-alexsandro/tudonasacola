@@ -11,11 +11,9 @@ export class ModalView {
       callback($(this).val());
     });
   }
-
   onSaveClick(callback) {
     $("#saveList").on("click", callback);
   }
-
   onCloseClick(callback) {
     $("#close_modal").on("click", callback);
   }
@@ -25,27 +23,23 @@ export class ModalView {
   show() {
     $(".modal").addClass("modal--active");
   }
-
   hide() {
     $(".modal").removeClass("modal--active");
     this.disableSave();
   }
-
   enableSave() {
     $("#saveList").prop("disabled", false);
-    $('#error-message').addClass('hidden')
-    $('#lista').removeClass('error')
+    $('#error-message').addClass('hidden');
+    $('#lista').removeClass('error');
 
 
   }
-
   disableSave() {
     $("#saveList").prop("disabled", true);
-    $('#error-message').removeClass('hidden')
-    $('#lista').addClass('error')
+    $('#error-message').removeClass('hidden');
+    $('#lista').addClass('error');
 
   }
-
   getInputValue() {
     return $("#lista").val();
   }
@@ -56,12 +50,9 @@ export class ModalView {
         <label for="lista">Nome da sua lista:</label>
         <input type="text" id="lista" name="lista"  placeholder="Digite aqui...">
          <small id="error-message" class="error hidden">Mínimo de três letras</small>
-        <button id="saveList" class="btn btn-modal">Salvar</button>
+        <button id="saveList" class="btn btn-modal" disabled>Salvar</button>
     `;
-
-
   }
-
   //   getEditListContent(nomeAtual) {
   //     return `
   //       <h2>Edite sua Lista</h2>

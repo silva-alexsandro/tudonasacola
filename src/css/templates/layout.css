@@ -2,10 +2,15 @@
 @import url('../components/button.css');
 @import url('../components/circle.css');
 @import url('../components/icon.css');
+@import url('../components/dropdown.css');
 @import url('../components/line.css');
 @import url('../components/modal.css');
 @import url('../themes/dark_mode.css');
-@import url('../utils/util.css');
+@import url('./lists.css');
+
+.flex {
+  display: flex;
+}
 
 .error {
   color: var(--red-dark);
@@ -17,6 +22,14 @@
 .hidden {
   visibility: hidden;
 }
+
+.viewport_box {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
 
 /*
 #header {
