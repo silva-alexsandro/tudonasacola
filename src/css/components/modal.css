@@ -100,6 +100,8 @@
     border: 1px solid var(--gray4);
     border-radius: var(--radius-md);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 30rem;
+
   }
 }
 
