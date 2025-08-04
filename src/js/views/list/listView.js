@@ -19,8 +19,8 @@ export class ListView {
       lists.forEach((list) => {
         const formattedDate = formatShortDate(new Date(list.createdDate));
         ul.append(`
-        <li class="listView" data-id="${list.id}">
-          <div class="info">
+        <li>
+          <div data-id="${list.id}" class="listView info">
             <span class="date">${formattedDate}</span>
             <span class="separator">|</span>
             <span class="name" title="${list.name}">${list.name}</span>
