@@ -14,7 +14,7 @@ Aplicação web simples e responsiva para criar, organizar e compartilhar listas
 
 * [x] Criar e nomear listas de compras
 * [ ] Adicionar, editar, excluir e marcar itens como "comprados"
-* [ ] Múltiplas listas salvas no `localStorage`
+* [x] Múltiplas listas salvas no `indexdb`
 * [x] Interface responsiva e com Dark Mode
 * [x] Dark Mode sendo salvo em localStorage
 * [ ] Exportar lista para texto compartilhável

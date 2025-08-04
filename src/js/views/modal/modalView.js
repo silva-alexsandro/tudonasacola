@@ -1,11 +1,12 @@
 export class ModalView {
   constructor() {
     this.modalContent = $('.modal__content__body');
+    this.mode = "create";
+    this.editingId = null;
   }
   openModal(callback) {
     $('#createList').on('click', callback);
   }
-  /**nao escuta o evento */
   onInputChange(callback) {
     $("#lista").on("input", function () {
       callback($(this).val());
@@ -17,22 +18,25 @@ export class ModalView {
   onCloseClick(callback) {
     $("#close_modal").on("click", callback);
   }
-  createContentInModal() {
-    this.modalContent.html(this.getCreateListContent())
-  }
+
   show() {
     $(".modal").addClass("modal--active");
   }
+
   hide() {
     $(".modal").removeClass("modal--active");
     this.disableSave();
+    this.clear(); // limpa estado após fechar
   }
+  
+  createContentInModal() {
+    this.modalContent.html(this.getCreateListContent())
+  }
+
   enableSave() {
     $("#saveList").prop("disabled", false);
     $('#error-message').addClass('hidden');
     $('#lista').removeClass('error');
-
-
   }
   disableSave() {
     $("#saveList").prop("disabled", true);
@@ -43,30 +47,37 @@ export class ModalView {
   getInputValue() {
     return $("#lista").val();
   }
-
-  getCreateListContent() {
-    return `
-        <h2>Crie sua Lista</h2>
-        <label for="lista">Nome da sua lista:</label>
-        <input type="text" id="lista" name="lista"  placeholder="Digite aqui...">
-         <small id="error-message" class="error hidden">Mínimo de três letras</small>
-        <button id="saveList" class="btn btn-modal" disabled>Salvar</button>
-    `;
+  setInputValue(value) {
+    $("#lista").val(value);
   }
-  //   getEditListContent(nomeAtual) {
-  //     return `
-  //       <h2>Edite sua Lista</h2>
-  //       <input type="text" id="listName" value="${nomeAtual}" />
-  //       <button id="saveList">Salvar</button>
-  //     `;
-  //   }
+  setMode(mode) {
+    this.mode = mode;
+  }
 
-  //   getAddItemContent() {
-  //     return `
-  //       <h2>Adicionar Item</h2>
-  //       <input type="text" id="itemName" placeholder="Nome do item" />
-  //       <button id="saveItem">Adicionar</button>
-  //     `;
-  //   }
+  getMode() {
+    return this.mode;
+  }
+  setEditingId(id) {
+    this.editingId = id;
+  }
 
+  getEditingId() {
+    return this.editingId;
+  }
+
+  clear() {
+    this.setMode("create");
+    this.setEditingId(null);
+    $("#lista").val("");
+  }
+  createContentInModal(nomeAtual = "") {
+    const isEditing = !!nomeAtual;
+    this.modalContent.html(`
+      <h2>${isEditing ? "Edite sua Lista" : "Crie sua Lista"}</h2>
+      <label for="lista">Nome da sua lista:</label>
+      <input type="text" id="lista" name="lista" placeholder="Digite aqui..." value="${nomeAtual}">
+      <small id="error-message" class="error hidden">Mínimo de três letras</small>
+      <button id="saveList" class="btn btn-modal" disabled>Salvar</button>
+    `);
+  }
 }

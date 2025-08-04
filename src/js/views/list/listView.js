@@ -31,12 +31,12 @@ export class ListView {
           <button class="toShare" data-id="${list.id}">
               <i class="ph ph-upload-simple"></i>
               Compartilhar
-            </button>
+            </button>--> 
             <button class="toEdit" data-id="${list.id}">
               <i class="ph ph-pencil-simple-line"></i>
               Renomear
             </button>
-            --> 
+            
             <button class="toDelete" data-id="${list.id}">
               <i class="ph ph-trash"></i>
               Excluir

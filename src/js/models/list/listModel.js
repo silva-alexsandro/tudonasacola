@@ -16,7 +16,6 @@ export class ListModel {
 
   async createList(nome) {
     const listData = new ListSchema(nome);
-    console.log('dentro de model list, valor de list data: ', listData)
     const errors = listData.validate();
     if (errors.length > 0) throw new Error(errors.join('\n'));
 
@@ -27,10 +26,23 @@ export class ListModel {
     return id;
   }
 
-  async updateList(listaData) {
-    const model = new ListSchema(listaData.name, listaData.createdDate, listaData.id);
+  async updateList(id, name) {
+    if (typeof name !== "string" || name.trim().length < 3) {
+      throw new Error("Nome inválido passado para updateList.");
+    }
+    // Aqui buscamos a lista atual para preservar os dados existentes
+    const listaData = await this.repo.getById(id);
+    if (!listaData) {
+      throw new Error("Lista não encontrada.");
+    }
+    // Criamos um novo modelo com os dados antigos + nome novo
+    const model = new ListSchema(name.trim(), listaData.createdDate, id);
+    // Validamos o modelo completo
     const errors = model.validate();
-    if (errors.length > 0) throw new Error(errors.join('\n'));
+    if (errors.length > 0) {
+      throw new Error(errors.join('\n'));
+    }
+    // Atualizamos no repositório
     await this.repo.update(model);
   }
   async deleteList(id) {
