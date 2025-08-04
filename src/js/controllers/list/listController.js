@@ -14,7 +14,7 @@ export class ListController {
     this.refreshView();
 
     EventBus.on("listCreated", async (e, name) => {
-      
+
       await this.listModel.createList(name);
       this.refreshView();
     });
@@ -33,6 +33,11 @@ export class ListController {
       await this.listModel.deleteList(id);
       this.refreshView();
     });
+
+    this.listView.onListClick((id) => {
+      window.location.href = `./src/pages/list.html?id=${id}`;
+    });
+
   }
 
   async refreshView() {

@@ -19,7 +19,7 @@ export class ListView {
       lists.forEach((list) => {
         const formattedDate = formatShortDate(new Date(list.createdDate));
         ul.append(`
-        <li>
+        <li class="listView" data-id="${list.id}">
           <div class="info">
             <span class="date">${formattedDate}</span>
             <span class="separator">|</span>
@@ -78,5 +78,11 @@ export class ListView {
       callback(id);
     });
   }
-
+  onListClick(callback) {
+    // Delegação para pegar clique no item da lista (classe .lista-item, por exemplo)
+    $(document).on('click', '.listView', function () {
+      const id = $(this).data('id');
+      callback(id);
+    });
+  }
 }
