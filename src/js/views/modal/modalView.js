@@ -77,7 +77,7 @@ export class ModalView {
       <label for="lista">Nome da sua lista:</label>
       <input type="text" id="lista" name="lista" placeholder="Digite aqui..." value="${nomeAtual}">
       <small id="error-message" class="error hidden">Mínimo de três letras</small>
-      <button id="saveList" class="btn btn-modal" disabled>Salvar</button>
+      <div class='modal_footer'><button id="saveList" class="btn btn_primary" disabled>Salvar</button></div>
     `);
   }
 }

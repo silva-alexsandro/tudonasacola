@@ -15,12 +15,12 @@ export class ListView {
       </div>
     `);
     } else {
-      const ul = $("<ul></ul>");
+      const ul = $("<ul class='scroll_ghost list_view'></ul>");
       lists.forEach((list) => {
         const formattedDate = formatShortDate(new Date(list.createdDate));
         ul.append(`
-        <li>
-          <div data-id="${list.id}" class="listView info">
+        <li class='list_view_item'>
+          <div data-id="${list.id}" class="toDetails info">
             <span class="date">${formattedDate}</span>
             <span class="separator">|</span>
             <span class="name" title="${list.name}">${list.name}</span>
@@ -80,7 +80,7 @@ export class ListView {
   }
   onListClick(callback) {
     // Delegação para pegar clique no item da lista (classe .lista-item, por exemplo)
-    $(document).on('click', '.listView', function () {
+    $(document).on('click', '.toDetails', function () {
       const id = $(this).data('id');
       callback(id);
     });

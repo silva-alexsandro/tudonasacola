@@ -7,7 +7,7 @@
   <meta name="description"
     content="Organize sua vida com o Lista de Compras Compartilhaveis — uma forma simples e rápida de criar, editar e salvar listas.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LCC | Home</title>
+  <title>Listas | Tudo na sacola</title>
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,16 +26,13 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-  <header id="header">
-    <div class="viewport_box flex">
-      <a href="/" class="wrapper_logo ">
-        <i class="ph ph-shopping-cart logo"></i>
-        <span>
-          Hora das Compras
-        </span>
+  <header id="headerTop">
+    <nav class="navbar flex">
+      <a href="#" class="navbar_brand">
+        <img src="./src/assets/img/logo.png" alt="logo da aplicação tudo dentro da sacola">
       </a>
-      <nav>
-        <div class="toggle">
+      <ul class="navbar_nav">
+        <li class="nav_item toggle">
           <label for="switchThemeDark" title="Alternar tema" aria-label="Alternar entre modo claro e escuro">
             <input id="switchThemeDark" type="checkbox" name="theme" />
             <svg id='sun' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -49,17 +46,17 @@
               </path>
             </svg>
           </label>
-        </div>
-      </nav>
-    </div>
+        </li>
+      </ul>
+    </nav>
   </header>
   <main id="main">
-    <div class="viewport_box flex">
-      <section id="wrapper_lists"></section>
-      <button id="createList" class="flex btn">
-        <i class="circle icon ph ph-plus"></i>
-        Criar uma nova lista
-      </button>
+    <div class="viewport_box">
+      <section class="wrapper_search">
+        <button id="createList" class="btn btn_primary btn_small"><i class="ph ph-plus"></i>Nova Lista
+        </button>
+      </section>
+      <section id="wrapper_lists" class="scroll_ghost"></section>
     </div>
     <div class="modal " role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal__overlay"></div>
@@ -68,7 +65,6 @@
           <button id='close_modal' class="modal__content__close" aria-label="Fechar modal">&times;</button>
         </div>
         <div class="modal__content__body"></div>
-        <!-- conteudo vindo via js -->
       </div>
     </div>
   </main>

@@ -1,0 +1,23 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.toggle label svg#sun,
+.toggle label svg#moon {
+  width: var(--space-lg);
+  fill: var(--color-text-primary);
+}
+.toggle label svg#sun,
+.toggle label svg#moon {
+  transition: all .3s;
+  cursor: pointer;
+}
+.toggle .hidden {
+  display: none;
+}

@@ -32,9 +32,9 @@
 }
 
 .dropdown button:last-child {
-  color: var(--red-dark);
+  color: var(--color-danger);
 }
 
 .dropdown button:last-child:hover {
-  background-color: var(--red-light);
+  background-color: var(--color-red-light);
 }

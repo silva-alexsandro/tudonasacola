@@ -1,0 +1,25 @@
+:root {
+  --color-bg-primary: #ebe8e8;
+  --color-bg-secondary: #f5f5f5;
+  --color-text-primary: #212121;
+  --color-text-secondary: #a0a0a0;
+  --color-border: #e0e0e0;
+  --color-accent: #28a745;
+  --color-danger: #e34e4e;
+  --color-success: #62b662;
+  --color-white: #fff;
+  --color-red-light: #bf3b4480;
+}
+
+/* Paleta de Cores - Tema Escuro */
+body.dark_mode {
+  --color-bg-primary: #1e1e1e;
+  --color-bg-secondary: #2c2c2c;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #a0a0a0;
+  --color-border: #444444;
+  --color-accent: #62b662;
+  /* Nosso verde de destaque */
+  --color-danger: #e34e4e;
+  --color-success: #62b662;
+}

@@ -1,6 +1,6 @@
 .lineSpace {
   border: none;
   height: 2px;
-  background-color: #ccc;
+  background-color: var( --color-bg-secondary);
   margin: 1rem 0;
 }

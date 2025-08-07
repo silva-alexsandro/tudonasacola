@@ -1,0 +1,53 @@
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: var(--space-xs);
+}
+
+.navbar_brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 7rem;
+  height: 7rem;
+  overflow: hidden;
+}
+
+.navbar_brand img {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  display: block;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar_brand span {
+  width: 7rem;
+  font-weight: 500;
+  word-wrap: break-word;
+  text-transform: capitalize;
+}
+
+.navbar_brand i {
+  font-size: 4rem;
+  color: var(--color-accent);
+}
+
+.navbar_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+
+}
+
+@media (min-width:375px) {
+  .navbar_brand span {
+    width: 10rem;
+    font-size: 1.8rem;
+  }
+}

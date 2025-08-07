@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Alexsandro Silva">
@@ -19,23 +18,21 @@
     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-  <!-- CSS -->
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../src/assets/favicon/favicon.ico" type="image/x-icon"> <!-- CSS -->
   <link rel="stylesheet" href="../css/main.css">
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
-  <header id="header">
-    <div class="viewport_box flex">
-      <a href="/" class="wrapper_logo ">
-        <i class="ph ph-shopping-cart logo"></i>
-        <span>
-          Hora das Compras
-        </span>
+  <header id="">
+    <nav class="navbar flex">
+      <a href="#" class="navbar_brand">
+        <img src="../assets/img/logo.png" alt="logo da aplicação tudo dentro da sacola">
       </a>
-      <nav>
-        <div class="toggle">
+      <ul class="navbar_nav">
+        <li class="nav_item toggle">
           <label for="switchThemeDark" title="Alternar tema" aria-label="Alternar entre modo claro e escuro">
             <input id="switchThemeDark" type="checkbox" name="theme" />
             <svg id='sun' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
@@ -49,9 +46,9 @@
               </path>
             </svg>
           </label>
-        </div>
-      </nav>
-    </div>
+        </li>
+      </ul>
+    </nav>
   </header>
   <main id="main">
     <div class="viewport_box flex">
@@ -76,5 +73,4 @@
   </main>
   <script type="module" src="../js/app.js" defer></script>
 </body>
-
 </html>

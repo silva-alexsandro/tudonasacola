@@ -1,26 +1,5 @@
-#header {
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.41);
-  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.41);
-  -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.41);
-}
-#header .viewport_box {
-  padding: 1.2rem 2rem;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* logo */
-#header .wrapper_logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-xs);
-}
-#header .wrapper_logo span {
-  width: 7rem;
-  font-weight: 700;
-  word-wrap: break-word;
-}
-#header .logo {
-  font-size: 4rem;
+header {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.41);
 }
