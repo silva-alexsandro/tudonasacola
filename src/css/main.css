@@ -1,4 +1,5 @@
 @import url('./globals/base.css');
 @import url('./globals/colors.css');
 @import url('./pages/lists.css');
+@import url('./pages/listdetail.css');
 @import url('./pages/home.css');

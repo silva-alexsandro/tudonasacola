@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Alexsandro Silva">
+  <meta name="title" content="Lista de Compras Compartilhaveis - Crie e edite suas listas facilmente">
+  <meta name="description"
+    content="Organize sua vida com o Lista de Compras Compartilhaveis — uma forma simples e rápida de criar, editar e salvar listas.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerenciar Lista | Tudo na sacola</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <!-- icons  -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../../src/assets/favicon/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/main.css">
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <header id="">
+    <nav class="navbar flex">
+      <div id="navbar__left">
+        <!-- colocar para construir com js -->
+        <a href="./lists.html">
+          <i class="ph ph-arrow-left"></i>
+        </a>
+        <div class="navbar_brand">
+          <img src="../assets/img/logo.png" alt="logo da aplicação tudo dentro da sacola">
+        </div>
+        <h2 class="title-elipse">vindo do js</h2>
+        <!-- colocar para construir com js -->
+      </div>
+
+      <div class="navbar__actions_buttons">
+        <button id="toShare" class="btn btn_small btn_secondary"><i class="ph ph-export"></i>
+          <span>Compartilhar</span></button>
+        <button id="createItem" class="btn btn_small btn_primary">
+          <i class="ph ph-plus"></i>
+          <span>Adicionar Item</span></button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="viewport_box">
+
+      <section class="stats">
+        <div class="stat__box">
+          <div class="stat__box__header">
+            <span>Total de Itens</span>
+          </div>
+          <div class="stat__box__fotter flex">
+            <strong>5</strong>
+            <i>icone</i>
+          </div>
+        </div>
+        <div class="stat__box">
+          <div class="stat__box__header">
+            <span>Itens Comprados</span>
+          </div>
+          <div class="stat__box__fotter flex">
+            <strong>3</strong>
+            <i>icone</i>
+          </div>
+        </div>
+        <div class="stat__box">
+          <div class="stat__box__header">
+            <span>Valor Total</span>
+          </div>
+          <div class="stat__box__fotter flex">
+            <strong>R$ 611,00</strong>
+            <i>icone</i>
+          </div>
+        </div>
+      </section>
+      <section></section>
+    </div>
+  </main>
+  <script type="module" src="../js/app.js" defer></script>
+</body>
+
+</html>
