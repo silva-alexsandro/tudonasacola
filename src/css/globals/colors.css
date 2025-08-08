@@ -8,6 +8,7 @@
   --color-danger: #e34e4e;
   --color-success: #62b662;
   --color-white: #fff;
+  --color-blue: #007BFF;
   --color-red-light: #bf3b4480;
 }
 
@@ -19,7 +20,7 @@ body.dark_mode {
   --color-text-secondary: #a0a0a0;
   --color-border: #444444;
   --color-accent: #62b662;
-  /* Nosso verde de destaque */
   --color-danger: #e34e4e;
+  --color-blue: #2f72ee;
   --color-success: #62b662;
 }

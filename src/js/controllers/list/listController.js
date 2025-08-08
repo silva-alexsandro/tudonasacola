@@ -35,9 +35,8 @@ export class ListController {
     });
 
     this.listView.onListClick((id) => {
-      window.location.href = `./src/pages/list.html?id=${id}`;
+      window.location.href = `./list-detail.html?id=${id}`;
     });
-
   }
 
   async refreshView() {

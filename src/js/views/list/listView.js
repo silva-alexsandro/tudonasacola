@@ -35,8 +35,7 @@ export class ListView {
             <button class="toEdit" data-id="${list.id}">
               <i class="ph ph-pencil-simple-line"></i>
               Renomear
-            </button>
-            
+            </button>        
             <button class="toDelete" data-id="${list.id}">
               <i class="ph ph-trash"></i>
               Excluir
