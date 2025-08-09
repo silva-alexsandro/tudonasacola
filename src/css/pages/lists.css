@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 3.6rem;
+  margin-top: var(--space-sm);
 }
 
 #wrapper_lists::-webkit-scrollbar {

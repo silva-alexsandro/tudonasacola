@@ -10,7 +10,7 @@
 }
 .toggle label svg#sun,
 .toggle label svg#moon {
-  width: var(--space-lg);
+  width: var(--space-md);
   fill: var(--color-text-primary);
 }
 .toggle label svg#sun,

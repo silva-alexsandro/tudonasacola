@@ -10,7 +10,7 @@ export class ListView {
         <h1>Que pena!</h1>
         <p>Você <strong>ainda não</strong> possui nenhuma lista.</p>
         <div class="boxImage">
-          <img src="./src/assets/img/Illustration.svg" alt="ilustração de um homem com a mão para cima">
+         <img src="../assets/img/Illustration.svg" alt="ilustração de um homem com a mão para cima">
         </div>
       </div>
     `);
@@ -23,7 +23,7 @@ export class ListView {
           <div data-id="${list.id}" class="toDetails info">
             <span class="date">${formattedDate}</span>
             <span class="separator">|</span>
-            <span class="name" title="${list.name}">${list.name}</span>
+            <span class="name text-elipse" title="${list.name}">${list.name}</span>
           </div>
           <button class="menu_button">⋯</button>
           <div class="dropdown">
@@ -32,11 +32,12 @@ export class ListView {
               <i class="ph ph-upload-simple"></i>
               Compartilhar
             </button>--> 
-            <button class="toEdit" data-id="${list.id}">
+            <button class="toEdit" data-id="${list.id}" type="button" aria-label="Editar lista">
               <i class="ph ph-pencil-simple-line"></i>
               Renomear
             </button>        
-            <button class="toDelete" data-id="${list.id}">
+            <button class="toDelete" data-id="${list.id}"
+            type="button" aria-label="Excluir lista">
               <i class="ph ph-trash"></i>
               Excluir
             </button>

@@ -1,6 +1,7 @@
 @import url('../templates/layout.css');
+
 #home_main .viewport_box {
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
 }
 
 #home_main .viewport_box.flex {
@@ -14,7 +15,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
 }
 
 #home_main .hero .logo {
@@ -24,19 +24,16 @@
 #home_main .hero .title {
   font-size: 32px;
   font-weight: 700;
+  margin: 2rem 0;
 }
 
 #home_main .hero p {
   text-align: center;
   font-size: 18px;
-  max-width: 672px;
+  max-width: 576px;
 }
 
 @media (min-width: 1024px) {
-  #home_main .viewport_box {
-  padding: 2rem 0rem;
-}
-
   .hero .logo {
     width: 20rem;
   }
@@ -44,20 +41,16 @@
   .hero .title {
     font-size: 42px;
   }
-
-  .hero p {
-    font-size: 18px;
-  }
 }
 
 #home_main .box_start {
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  background: var(--color-bg-secondary);
   padding: var(--space-lg);
-  max-width: 672px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 576px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: var(--color-bg-secondary);
 }
 
 #home_main .box_start h2 {
@@ -68,10 +61,6 @@
   color: var(--color-text-secondary);
   text-align: center;
   margin-bottom: var(--space-md);
-}
-
-#home_main .box_start a {
-  background: var(--color-accent);
 }
 
 #home_main .box_start a {

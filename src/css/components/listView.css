@@ -10,10 +10,10 @@
   position: relative;
   color: inherit;
   background: var(--color-bg-secondary);
-  /*
-   */
 }
-
+.list_view_item:last-child {
+  margin-bottom: var(--space-sm);
+}
 .info {
   display: flex;
   align-items: center;
@@ -29,25 +29,6 @@
 .separator {
   opacity: .7;
 }
-
-/* .name {
-  max-width: 15rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-@media (min-width: 425px) {
-  .name {
-    max-width: 20rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .name {
-    max-width: 100%;
-  }
-} */
 
 .menu_button {
   background: none;

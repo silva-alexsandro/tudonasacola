@@ -19,6 +19,7 @@
 
 .btn_secondary {
   background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
 }
 
 .btn_danger {

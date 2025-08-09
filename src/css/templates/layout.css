@@ -5,6 +5,8 @@
 @import url('../components/dropdown.css');
 @import url('../components/line.css');
 @import url('../components/modal.css');
+@import url('../components/circle.css');
+@import url('../components/card.css');
 @import url('./header.css');
 
 .flex {
@@ -13,6 +15,10 @@
 
 .flex_columns {
   flex-direction: column;
+}
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .error {
@@ -38,9 +44,21 @@
   max-height: calc(100vh - 30vh);
   width: 100%;
   height: 100%;
-  margin-top: var(--space-xs);
+  margin-top: var(--space-xxs);
   overflow: auto;
   scrollbar-width: none;
+}
+
+.text-elipse {
+  font-size: 1.6rem;
+  max-width: 50%;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: var(--space-xs);
 }
 
 body.dark_mode .boxImage img {
