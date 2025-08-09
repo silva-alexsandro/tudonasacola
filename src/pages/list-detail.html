@@ -28,7 +28,7 @@
 </head>
 
 <body>
-  <header id="">
+  <header>
     <nav class="navbar flex">
       <div id="navbar__left">
         <!-- colocar para construir com js -->
@@ -59,7 +59,7 @@
       </ul>
     </nav>
   </header>
-  <main>
+  <main id="content">
     <div class="viewport_box">
       <section id="stats">
         <div class="stat__box shadow">
@@ -158,6 +158,9 @@
         </div>
         <div class="modal__content__body"></div>
       </div>
+    </div>
+    <div id="loading">
+      <i class="ph ph-spinner-gap spinner-icon"></i>
     </div>
   </main>
   <script type="module" src="../js/app.js" defer></script>
