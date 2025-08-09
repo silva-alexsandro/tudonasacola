@@ -61,10 +61,12 @@
 
 .stat__box:nth-child(2) .circle {
   background-color: var(--color-accent);
+  color: var(--color-white);
 }
 
 .stat__box:nth-child(3) .circle {
   background-color: var(--color-info);
+  color: var(--color-white);
 }
 
 #wrapperItem {

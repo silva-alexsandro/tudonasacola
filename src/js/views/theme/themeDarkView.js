@@ -16,8 +16,9 @@ export class ThemeDarkView {
   }
   applyTheme(isDark) {
     $('body').toggleClass('dark_mode', isDark);
-    $('#moon').toggleClass('hidden', isDark);
-    $('#sun').toggleClass('hidden', !isDark);
+    $('#icon-theme-on').toggleClass('ph-sun', isDark);
+    $('#icon-theme-on').toggleClass('ph-moon', !isDark);
+    
   }
   setButtonState(isDark) {
     this.$toggleButton.prop('checked', isDark);
