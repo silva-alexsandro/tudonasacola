@@ -8,26 +8,41 @@ export class ModalController {
 
   initEvents() {
     this.view = new ModalView();
-    // === BOTÃO DE CRIAR LISTA ===
+
     this.view.openModal((value) => {
-      this.view.createContentInModal(); // conteúdo de criação
+      this.view.createContentInModal();
       this.view.show();
 
-      this.handleCommonEvents("create"); // NOVO: comportamento genérico
+      this.handleCommonEvents("create");
+    });
+
+    this.view.openModalCreateItem(() => {
+      this.view.createItemContent();
+      this.view.show();
+      this.handleCommonEvents("createItem");
+    });
+
+    this.view.openModalShare(() => {
+      const shareData = '';
+      this.view.createShareContent(shareData);
+      this.view.show();
     });
 
     EventBus.on("openEditModal", (e, listData) => {
-      this.view.createContentInModal(listData.name); // usa nome atual
+      this.view.createContentInModal(listData.name);
       this.view.show();
-      this.view.setInputValue(listData.name);        // preenche o input
-      this.view.setEditingId(listData.id);           // salva o ID
-      this.handleCommonEvents("edit");               // comportamento genérico
+      this.view.setInputValue(listData.name);
+      this.view.setEditingId(listData.id);
+      this.handleCommonEvents("edit");
+    });
+    EventBus.on("openEditModalItem", (e, itemData) => {
+      this.view.createItemContent(itemData.name);
+      this.view.show();
+      this.view.setEditingId(itemData.id);
+      this.handleCommonEvents("editItem");
     });
 
-    // === BOTÃO FECHAR MODAL ===
-    this.view.onCloseClick(() => {
-      this.view.hide();
-    });
+    this.view.onCloseClick(() => this.view.hide());
 
     $(document).on('keydown', (e) => {
       if (e.key === 'Escape') {
@@ -66,15 +81,24 @@ export class ModalController {
       const id = this.view.getEditingId();
 
       if (typeof nome === "string" && nome.trim().length >= 3) {
-        if (mode === "edit") {
-          EventBus.trigger("listEditConfirmed", { id, updatedName: nome }); // EDITAR
-        } else {
-          EventBus.trigger("listCreated", nome); // CRIAR
+        switch (mode) {
+          case "create":
+            EventBus.trigger("listCreated", nome);
+            break;
+          case "edit":
+            EventBus.trigger("listEditConfirmed", { id, updatedName: nome });
+            break;
+          case "createItem":
+            EventBus.trigger("itemCreated", nome);
+            break;
+          case "editItem":
+            EventBus.trigger("itemEditConfirmed", { id, updatedName: nome });
+            break;
         }
         this.view.hide();
       }
     });
 
-    this.view.setMode(mode); // controla se está criando ou editando
+    this.view.setMode(mode);
   }
 }

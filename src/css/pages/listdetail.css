@@ -74,8 +74,8 @@
 }
 
 #wrapperItem.empty {
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
   min-width: 100%;
 }
 
@@ -83,10 +83,16 @@
   .navbar__actions_buttons span {
     display: none;
   }
-}
 
-@media (max-width: 768px) {
   #stats {
-    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: scroll;
+    overflow: auto;
+    scrollbar-width: none;
+    behavior: 'smooth';
+    gap: 1.2rem;
+  }
+  .stat__box {
+    min-width: 200px;
   }
 }
