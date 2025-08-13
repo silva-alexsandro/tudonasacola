@@ -11,9 +11,11 @@
   color: inherit;
   background: var(--color-bg-secondary);
 }
+
 .list_view_item:last-child {
   margin-bottom: var(--space-sm);
 }
+
 .info {
   display: flex;
   align-items: center;
@@ -23,11 +25,15 @@
 
 .date {
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xxs);
 }
 
 .date,
 .separator {
-  opacity: .7;
+  opacity: .8;
 }
 
 .menu_button {

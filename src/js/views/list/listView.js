@@ -21,7 +21,7 @@ export class ListView {
         ul.append(`
         <li class='list_view_item'>
           <div data-id="${list.id}" class="toDetails info">
-            <span class="date">${formattedDate}</span>
+            <span class="date"><i class="ph ph-calendar-blank"></i> ${formattedDate}</span>
             <span class="separator">|</span>
             <span class="name text-elipse" title="${list.name}">${list.name}</span>
           </div>
