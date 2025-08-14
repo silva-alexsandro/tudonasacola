@@ -1,3 +1,4 @@
+import { DetailController } from "./controllers/details/detailController.js";
 import { ListController } from "./controllers/list/listController.js";
 import { ModalController } from "./controllers/modal/modalController.js";
 import { ThemeDarkController } from "./controllers/theme/themeDarkController.js";
@@ -16,5 +17,7 @@ $(document).ready(function () {
   modalController.initEvents();
 
   const lists = new ListController();
-  lists.init();
+  lists.init(); 
+  const detail = new DetailController();
+  detail.init();
 });
