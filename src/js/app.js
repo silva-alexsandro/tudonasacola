@@ -1,5 +1,6 @@
-import { DetailController } from "./controllers/details/detailController.js";
+
 import { ListController } from "./controllers/list/listController.js";
+import { DashboardController } from "./controllers/dashborad/dashboardController.js";
 import { ModalController } from "./controllers/modal/modalController.js";
 import { ThemeDarkController } from "./controllers/theme/themeDarkController.js";
 
@@ -10,14 +11,13 @@ $(window).on('load', function () {
 });
 
 $(document).ready(function () {
-  const themeController = new ThemeDarkController();
-  themeController.init();
-
   const modalController = new ModalController();
-  modalController.initEvents();
-
+  const themeController = new ThemeDarkController();
   const lists = new ListController();
-  lists.init(); 
-  const detail = new DetailController();
-  detail.init();
+  const dash = new DashboardController();
+
+  modalController.initEvents();
+  lists.init();
+  themeController.init();
+  dash.init();
 });

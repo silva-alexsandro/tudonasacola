@@ -49,7 +49,7 @@
   display: block;
 }
 
-.modal__content input[type="text"] {
+.modal__content input {
   width: 100%;
   font-size: 14px;
   border-radius: var(--radius-sm);
@@ -58,11 +58,11 @@
   border: 1px solid var(--color-border);
 }
 
-.modal__content input[type="text"]:focus {
+.modal__content input:focus {
   border-color: var(--color-border);
 }
 
-.modal__content input[type="text"].error {
+.modal__content input.error {
   outline: 2px solid var(--color-danger);
   outline-offset: 0;
   margin-bottom: 0;
@@ -83,6 +83,7 @@
 }
 .modal_footer{
   text-align: end;
+  margin-top: var(--space-sm);
 }
 /* Animação de aparecimento */
 @keyframes fadeIn {
@@ -106,7 +107,7 @@
 
     border-radius: var(--radius-md);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 30rem;
+    height: 35rem;
 
   }
 }

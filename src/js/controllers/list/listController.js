@@ -14,7 +14,6 @@ export class ListController {
     this.refreshView();
 
     EventBus.on("listCreated", async (e, name) => {
-
       await this.listModel.createList(name);
       this.refreshView();
     });

@@ -20,17 +20,9 @@ export class ModalView {
       callback($(this).val());
     });
   }
-  // onInputChange(callback) {
-  //   $("#lista").on("input", function () {
-  //     callback($(this).val());
-  //   });
-  // }
   onSaveClick(callback) {
     $("#saveList, #saveItem").on("click", callback);
   }
-  // onSaveClick(callback) {
-  //   $("#saveList").on("click", callback);
-  // }
   onCloseClick(callback) {
     $("#close_modal").on("click", callback);
   }
@@ -40,7 +32,7 @@ export class ModalView {
   hide() {
     $(".modal").removeClass("modal--active");
     this.disableSave();
-    this.clear(); // limpa estado após fechar
+    this.clear();
   }
 
   enableSave() {
@@ -68,7 +60,7 @@ export class ModalView {
     this.setEditingId(null);
     this.setInputValue("");
   }
-  
+
   createContentInModal(nomeAtual = "") {
     const isEditing = !!nomeAtual;
     this.modalContent.html(`
@@ -80,21 +72,49 @@ export class ModalView {
     `);
   }
 
-  createItemContent(itemAtual = "") {
-    const isEditing = !!itemAtual;
+  createItemContent({ name = "", price = "", quantity = "" } = {}) {
+    const isEditing = !!name;
+
     this.modalContent.html(`
-      <h2>${isEditing ? "Edite o Item" : "Crie um Item"}</h2>
+    <h2>${isEditing ? "Edite o Item" : "Crie um Item"}</h2>
+
+    <div class="form-group">
       <label for="itemNome">Nome do item:</label>
-      <input type="text" id="itemNome" value="${itemAtual}">
+      <input type="text" id="itemNome" value="${name}">
       <small id="error-message" class="error hidden">Mínimo de três letras</small>
-      <div class='modal_footer'><button id="saveItem" class="btn btn_primary" disabled>Salvar</button></div>
-    `);
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="itemPrice">Valor:</label>
+        <input type="number" id="itemPrice" value="${price}" step="0.01" min="0">
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantidade:</label>
+        <input type="number" id="quantity" name="quantity" value="${quantity}" min="1">
+      </div>
+    </div>
+
+    <div class='modal_footer'>
+      <button id="saveItem" class="btn btn_primary" disabled>Salvar</button>
+    </div>
+  `);
+  }
+  getItemFormValues() {
+    return {
+      name: $("#itemNome").val().trim(),
+      price: parseFloat($("#itemPrice").val()) || 0,
+      quantity: parseInt($("#quantity").val()) || 1
+    };
   }
 
   createShareContent(data) {
     this.modalContent.html(`
       <h2>Compartilhar</h2>
-      
+      <p>
+      Você poderá compartlhar em breve
+      </p>
     `);
   }
 }
