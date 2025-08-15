@@ -6,7 +6,7 @@
   --color-border: #e0e0e0;
   --color-accent: #28a745;
   --color-danger: #e34e4e;
-  --color-success: #62b662;
+  --color-success: #d1f7d1;
   --color-white: #fff;
   --color-info: #007BFF;
   --color-red-light: #bf3b4480;
@@ -22,5 +22,4 @@ body.dark_mode {
   --color-accent: #62b662;
   --color-danger: #e34e4e;
   --color-info: #2f72ee;
-  --color-success: #62b662;
 }

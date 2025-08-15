@@ -2,7 +2,7 @@
   display: grid;
   gap: 1rem;
   /* grid-template-columns: 1fr; */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
   transition: all 0.25s ease;
 }
@@ -14,6 +14,15 @@ article.card {
   padding: var(--space-sm);
   transition: transform .14s ease, box-shadow .14s ease;
   /* cursor: grab; */
+}
+
+.card.done {
+  background-color: var(--color-success);
+  box-shadow: none;
+}
+
+.card.done h3 {
+  text-decoration: line-through;
 }
 
 article.card.dragging {

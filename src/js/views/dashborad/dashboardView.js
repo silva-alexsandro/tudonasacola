@@ -7,45 +7,48 @@ export class DashboardView {
   }
 
   renderNameList(name) {
-    this.navbarTitle.html(name); // Evita append acumulado
+    this.navbarTitle.html(name);
   }
 
-  renderTotalItem(items = 0) {
-    if (this.totalItem.length) {
-      this.totalItem.html(`
-        <footer class="stat__footer">
-          <strong>${items}</strong>
-          <div class="circle">
-            <i class="ph ph-shopping-bag-open"></i>
-          </div>
-        </footer>
-      `);
-    }
+  renderTotalItem(count = 0) {
+    this.totalItem.html(`
+       <header class="stat__header">
+            <span>Total de Itens</span>
+          </header>
+      <footer class="stat__footer">
+        <strong>${count}</strong>
+        <div class="circle">
+          <i class="ph ph-shopping-bag-open"></i>
+        </div>
+      </footer>
+    `);
   }
 
-  renderItemDone(items = 0) {
-    if (this.comprados.length) {
-      this.comprados.html(`
-        <footer class="stat__footer">
-          <strong>${items}</strong>
-          <div class="circle">
-            <i class="ph ph-check"></i>
-          </div>
-        </footer>
-      `);
-    }
+  renderItemDone(totalMarked = 0) {
+    this.comprados.html(`
+       <header class="stat__header">
+            <span>Itens Comprados</span>
+          </header>
+      <footer class="stat__footer">
+        <strong>${totalMarked}</strong>
+        <div class="circle">
+          <i class="ph ph-check"></i>
+        </div>
+      </footer>
+    `);
   }
 
   renderItemValue(total = 0) {
-    if (this.preco.length) {
-      this.preco.html(`
-        <footer class="stat__footer">
-          <strong>R$: ${Number(total).toFixed(2)}</strong>
-          <div class="circle">
-            <i class="ph ph-receipt"></i>
-          </div>
-        </footer>
-      `);
-    }
+    this.preco.html(`
+      <header class="stat__header">
+            <span>Valor Total</span>
+          </header>
+      <footer class="stat__footer">
+        <strong>R$: ${Number(total).toFixed(2)}</strong>
+        <div class="circle">
+          <i class="ph ph-receipt"></i>
+        </div>
+      </footer>
+    `);
   }
 }

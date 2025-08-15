@@ -1,14 +1,13 @@
+import { EventBus } from "../../events/eventBus.js";
+
 export class ItemView {
   constructor() {
     this.containerCards = $('#wrapperItem');
+    this.markedItems = new Set();
   }
 
-  /**
-   * Renderiza todos os itens na tela
-   * @param {Array} items - Lista de objetos com: id, name, price, quantity
-   */
   render(items = []) {
-    this.containerCards.html(""); // Limpa antes de renderizar
+    this.containerCards.empty();
 
     if (items.length === 0) {
       this.containerCards.html("<p>Nenhum item encontrado.</p>");
@@ -16,17 +15,28 @@ export class ItemView {
     }
 
     items.forEach((item) => {
-      const total = (parseFloat(item.price) * parseFloat(item.quantity)).toFixed(2);
+      const total = (item.price * item.quantity).toFixed(2);
       const priceFormatted = parseFloat(item.price).toFixed(2);
+      const isChecked = this.markedItems.has(item.id);
 
-      const itemHTML = `
-        <article class="card shadow">
+      const cardClass = isChecked ? "card shadow done" : "card shadow";
+      const iconClass = isChecked ? "ph ph-checks" : "ph ph-shopping-bag-open";
+      const nameStyle = isChecked ? "text-decoration: line-through;" : "";
+
+      const html = `
+        <article class="${cardClass}" 
+                 data-id="${item.id}" 
+                 data-price="${item.price}" 
+                 data-quantity="${item.quantity}">
+                 
           <header class="card__header">
-            <h3>${item.name}</h3>
-            <div class="circle"><i class="ph ph-shopping-bag-open"></i></div>
+            <h3 style="${nameStyle}">${item.name}</h3>
+            <div class="circle mark-item" style="cursor:pointer">
+              <i class="${iconClass}"></i>
+            </div>
           </header>
 
-          <section class="meta" aria-label="Informações do produto">
+          <section class="meta">
             <dl>
               <dt>Preço unitário:</dt>
               <dd>R$ ${priceFormatted}</dd>
@@ -36,48 +46,70 @@ export class ItemView {
           </section>
 
           <hr />
-          <p class="total" aria-label="Total">
+          <p class="total">
             <span>Total:</span>
             <span class="value">R$ ${total}</span>
           </p>
 
           <footer class="card-footer">
-            <button class="btn_icon_only toEdit" data-id="${item.id}" type="button" aria-label="Editar produto">
+            <button class="btn_icon_only toEdit" data-id="${item.id}">
               <i class="ph ph-pencil-simple-line"></i>
             </button>
-            <button class="btn_icon_only toDelete" data-id="${item.id}" type="button" aria-label="Remover produto">
+            <button class="btn_icon_only toDelete" data-id="${item.id}">
               <i class="ph ph-trash"></i>
             </button>
           </footer>
         </article>
       `;
 
-      this.containerCards.append(itemHTML);
+      this.containerCards.append(html);
+    });
+
+    this.bindMarkItemEvents();
+  }
+
+  bindMarkItemEvents() {
+    this.containerCards.off("click", ".mark-item").on("click", ".mark-item", (e) => {
+      const card = $(e.currentTarget).closest("article");
+      const id = card.data("id");
+      const price = parseFloat(card.data("price"));
+      const quantity = parseInt(card.data("quantity"));
+
+      const isMarked = card.hasClass("done");
+
+      if (isMarked) {
+        card.removeClass("done");
+        card.find("i").removeClass("ph-checks").addClass("ph-shopping-bag-open");
+        card.find("h3").css("text-decoration", "none");
+        this.markedItems.delete(id);
+      } else {
+        card.addClass("done");
+        card.find("i").removeClass("ph-shopping-bag-open").addClass("ph-checks");
+        card.find("h3").css("text-decoration", "line-through");
+        this.markedItems.add(id);
+      }
+
+      this.emitItemStats();
     });
   }
 
-  /**
-   * Eventos de abrir/fechar dropdown
-   */
-  bindDropdownEvents() {
-    $("#wrapper_lists").off("click", ".menu_button");
+  emitItemStats() {
+    let totalMarked = 0;
+    let totalPrice = 0;
 
-    $("#wrapper_lists").on("click", ".menu_button", function (e) {
-      e.stopPropagation();
-      const dropdown = $(this).siblings(".dropdown");
-
-      $(".dropdown").not(dropdown).removeClass("active");
-      dropdown.toggleClass("active");
+    this.markedItems.forEach((id) => {
+      const card = this.containerCards.find(`article[data-id="${id}"]`);
+      if (card.length) {
+        const price = parseFloat(card.data("price"));
+        const quantity = parseInt(card.data("quantity"));
+        totalMarked += 1;
+        totalPrice += price * quantity;
+      }
     });
 
-    $(document).off("click.dropdown").on("click.dropdown", function () {
-      $(".dropdown").removeClass("active");
-    });
+    EventBus.trigger("itemsMarkedUpdated", { totalMarked, totalPrice });
   }
 
-  /**
-   * Define callback para clique em botão de deletar
-   */
   onDeleteClick(callback) {
     this.containerCards.on("click", ".toDelete", function () {
       const id = $(this).data("id");
@@ -85,9 +117,6 @@ export class ItemView {
     });
   }
 
-  /**
-   * Define callback para clique em botão de editar
-   */
   onEditClick(callback) {
     this.containerCards.on("click", ".toEdit", function () {
       const id = $(this).data("id");

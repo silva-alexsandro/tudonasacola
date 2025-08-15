@@ -6,19 +6,29 @@ import { ItemController } from "./itemController.js";
 export class DashboardController {
   constructor() {
     this.item = new ItemController();
-    this.detail = new DashboardView()
+    this.detail = new DashboardView();
   }
 
   async init() {
     const nameList = await this.getNameList();
-    this.item.init()
-    this.detail.renderNameList(nameList?.name)
+    this.item.init();
+    this.detail.renderNameList(nameList?.name);
+    this.detail.renderTotalItem(0);
+    this.detail.renderItemDone(0);
+    this.detail.renderItemValue(0);
+    // let mark = (data.totalMarked !== 0) ? data.totalMarked : 0
+    // let price = (data.totalPrice !== 0) ? data.totalPrice : 0
+    // this.detail.renderItemDone(mark);
+    // this.detail.renderItemValue(price);
 
     EventBus.on("stattotal", (e, totalItem) => {
       this.detail.renderTotalItem(totalItem);
     });
-    this.detail.renderItemDone()
-    this.detail.renderItemValue()
+
+    EventBus.on("itemsMarkedUpdated", (e, data) => {
+      this.detail.renderItemDone(data.totalMarked);
+      this.detail.renderItemValue(data.totalPrice);
+    });
   }
 
   async getNameList() {
