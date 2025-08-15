@@ -8,7 +8,6 @@ export class ThemeDarkController {
   }
 
   init() {
-    //só irá atuar qndo houver mudança na view
     this.view.onToggleTheme((isDark) => {
       this.model.saveTheme(isDark);
       this.view.applyTheme(isDark);

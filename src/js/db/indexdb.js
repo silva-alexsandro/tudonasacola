@@ -4,15 +4,11 @@ export function openDB() {
 
     request.onupgradeneeded = function (e) {
       const db = e.target.result;
-
-      // Tabela de listas
       if (!db.objectStoreNames.contains('lists')) {
         db.createObjectStore('lists', {
           keyPath: 'id', autoIncrement: true
         });
       }
-
-      // Tabela de itens (ainda será usada depois)
       if (!db.objectStoreNames.contains('itens')) {
         const itemStore = db.createObjectStore('itens', {
           keyPath: 'id',
@@ -21,8 +17,6 @@ export function openDB() {
         itemStore.createIndex('name', 'name', { unique: false });
         itemStore.createIndex('categoriaId', 'categoriaId', { unique: false });
       }
-
-      // Tabela de categorias (futura)
       if (!db.objectStoreNames.contains('categorias')) {
         const categoriaStore = db.createObjectStore('categorias', {
           keyPath: 'id',
@@ -30,8 +24,6 @@ export function openDB() {
         });
         categoriaStore.createIndex('name', 'name', { unique: true });
       }
-
-      // Tabela de ligação lista <-> item
       if (!db.objectStoreNames.contains('lista_item')) {
         const listaItemStore = db.createObjectStore('lista_item', {
           keyPath: 'id',

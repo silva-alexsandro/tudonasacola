@@ -16,11 +16,6 @@ export class DashboardController {
     this.detail.renderTotalItem(0);
     this.detail.renderItemDone(0);
     this.detail.renderItemValue(0);
-    // let mark = (data.totalMarked !== 0) ? data.totalMarked : 0
-    // let price = (data.totalPrice !== 0) ? data.totalPrice : 0
-    // this.detail.renderItemDone(mark);
-    // this.detail.renderItemValue(price);
-
     EventBus.on("stattotal", (e, totalItem) => {
       this.detail.renderTotalItem(totalItem);
     });

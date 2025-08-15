@@ -50,7 +50,6 @@ export class ListView {
   }
 
   bindDropdownEvents() {
-    // Remover listeners antigos antes de adicionar de novo (opcional)
     $("#wrapper_lists").off("click", ".menu_button");
 
     $("#wrapper_lists").on("click", ".menu_button", function (e) {
@@ -61,7 +60,6 @@ export class ListView {
       dropdown.toggleClass("active");
     });
 
-    // Clicar fora fecha todos
     $(document).off("click.dropdown").on("click.dropdown", function () {
       $(".dropdown").removeClass("active");
     });
@@ -79,7 +77,6 @@ export class ListView {
     });
   }
   onListClick(callback) {
-    // Delegação para pegar clique no item da lista (classe .lista-item, por exemplo)
     $(document).on('click', '.toDetails', function () {
       const id = $(this).data('id');
       callback(id);
