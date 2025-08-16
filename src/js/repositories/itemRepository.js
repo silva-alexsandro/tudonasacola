@@ -2,8 +2,7 @@ import { openDB } from "../db/indexdb.js";
 import { loadInLocalStorageItem, saveInLocalStorage } from "../db/handleLocalStorage.js";
 
 const STORE_NAME = "items";
-const BASE_URL =
-  window.location.hostname === "https://apitudonasacola.onrender.com/lists";
+const BASE_URL = "https://apitudonasacola.onrender.com/lists";
 
 export class ItemRepository {
   getOwner() {
