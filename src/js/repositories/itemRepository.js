@@ -3,9 +3,7 @@ import { loadInLocalStorageItem, saveInLocalStorage } from "../db/handleLocalSto
 
 const STORE_NAME = "items";
 const BASE_URL =
-  window.location.hostname === "localhost"
-    ? "http://localhost:3000/lists"
-    : "https://apitudonasacola.onrender.com/lists";
+  window.location.hostname === "https://apitudonasacola.onrender.com/lists";
 
 export class ItemRepository {
   getOwner() {
