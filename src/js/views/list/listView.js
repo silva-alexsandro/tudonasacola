@@ -17,7 +17,7 @@ export class ListView {
     } else {
       const ul = $("<ul class='scroll_ghost list_view'></ul>");
       lists.forEach((list) => {
-        const formattedDate = formatShortDate(new Date(list.createdDate));
+        const formattedDate = formatShortDate(list.createdDate);
         ul.append(`
         <li class='list_view_item'>
           <div data-id="${list.id}" class="toDetails info">

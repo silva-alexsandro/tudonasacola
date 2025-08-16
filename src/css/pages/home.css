@@ -58,7 +58,6 @@
 }
 
 #home_main .box_start p {
-  color: var(--color-text-secondary);
   text-align: center;
   margin-bottom: var(--space-md);
 }

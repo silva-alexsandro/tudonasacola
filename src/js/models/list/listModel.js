@@ -7,7 +7,11 @@ export class ListModel {
   }
 
   async getAll() {
-    return await this.repo.getAll();
+    try {
+      return await this.repo.getAll();
+    } catch {
+      return []
+    }
   }
 
   async getById(id) {
@@ -18,8 +22,7 @@ export class ListModel {
     const listData = new ListSchema(nome);
     const errors = listData.validate();
     if (errors.length > 0) throw new Error(errors.join('\n'));
-    const id = await this.repo.add(listData);
-    return id;
+    return await this.repo.add(listData);
   }
 
   async updateList(id, name) {
@@ -35,8 +38,9 @@ export class ListModel {
     if (errors.length > 0) {
       throw new Error(errors.join('\n'));
     }
-    await this.repo.update(model);
+    await this.repo.update(id, model);
   }
+
   async deleteList(id) {
     await this.repo.delete(id);
   }

@@ -41,7 +41,7 @@ export class ListController {
   async refreshView() {
     try {
       const listas = await this.listModel.getAll();
-      listas.sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate));
+      // listas.sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate));
       this.listView.render(listas);
       this.listView.bindDropdownEvents();
     } catch (error) {

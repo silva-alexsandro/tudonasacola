@@ -6,16 +6,16 @@ export class ItemView {
     this.markedItems = new Set();
   }
 
-  render(items = []) {
+  render(items) {
     this.containerCards.empty();
 
     if (items.length === 0) {
-      this.containerCards.html("<p>Nenhum item encontrado.</p>");
+      this.containerCards.html("<p>Sua lista esta vazia.</p>");
       return;
     }
 
     items.forEach((item) => {
-      const total = (item.price * item.quantity).toFixed(2);
+      const total = (item.price * item.amount).toFixed(2);
       const priceFormatted = parseFloat(item.price).toFixed(2);
       const isChecked = this.markedItems.has(item.id);
 
@@ -27,12 +27,12 @@ export class ItemView {
         <article class="${cardClass}" 
                  data-id="${item.id}" 
                  data-price="${item.price}" 
-                 data-quantity="${item.quantity}">
+                 data-amount="${item.amount}">
                  
           <header class="card__header">
             <h3 style="${nameStyle}">${item.name}</h3>
-            <div class="circle mark-item" style="cursor:pointer">
-              <i class="${iconClass}"></i>
+            <div class="circle mark-item " style="cursor:pointer">
+              <i class="mod ${iconClass}"></i>
             </div>
           </header>
 
@@ -41,7 +41,7 @@ export class ItemView {
               <dt>Preço unitário:</dt>
               <dd>R$ ${priceFormatted}</dd>
               <dt>Quantidade:</dt>
-              <dd>${item.quantity}x</dd>
+              <dd>${item.amount}x</dd>
             </dl>
           </section>
 
@@ -52,9 +52,11 @@ export class ItemView {
           </p>
 
           <footer class="card-footer">
-            <button class="btn_icon_only toEdit" data-id="${item.id}">
-              <i class="ph ph-pencil-simple-line"></i>
-            </button>
+           <!-- 
+              <button class="btn_icon_only toEdit" data-id="${item.id}">
+                <i class="ph ph-pencil-simple-line"></i>
+              </button>
+            --> 
             <button class="btn_icon_only toDelete" data-id="${item.id}">
               <i class="ph ph-trash"></i>
             </button>
@@ -73,18 +75,18 @@ export class ItemView {
       const card = $(e.currentTarget).closest("article");
       const id = card.data("id");
       const price = parseFloat(card.data("price"));
-      const quantity = parseInt(card.data("quantity"));
+      const amount = parseInt(card.data("amount"));
 
       const isMarked = card.hasClass("done");
 
       if (isMarked) {
         card.removeClass("done");
-        card.find("i").removeClass("ph-checks").addClass("ph-shopping-bag-open");
+        card.find(".mod").removeClass("ph-checks").addClass("ph-shopping-bag-open");
         card.find("h3").css("text-decoration", "none");
         this.markedItems.delete(id);
       } else {
         card.addClass("done");
-        card.find("i").removeClass("ph-shopping-bag-open").addClass("ph-checks");
+        card.find(".mod").removeClass("ph-shopping-bag-open").addClass("ph-checks");
         card.find("h3").css("text-decoration", "line-through");
         this.markedItems.add(id);
       }
@@ -101,9 +103,9 @@ export class ItemView {
       const card = this.containerCards.find(`article[data-id="${id}"]`);
       if (card.length) {
         const price = parseFloat(card.data("price"));
-        const quantity = parseInt(card.data("quantity"));
+        const amount = parseInt(card.data("amount"));
         totalMarked += 1;
-        totalPrice += price * quantity;
+        totalPrice += price * amount;
       }
     });
 

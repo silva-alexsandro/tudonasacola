@@ -1,65 +1,109 @@
 import { openDB } from "../db/indexdb.js";
+import { loadInLocalStorageItem, saveInLocalStorage } from "../db/handleLocalStorage.js";
 
-const STORE_NAME = 'lists';
+const STORE_NAME = "lists";
+const BASE_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:3000"
+    : "https://apitudonasacola.onrender.com";
 
 export class ListRepository {
+  getOwner() {
+    const owner = loadInLocalStorageItem("owner-id");
+    if (!owner) {
+      return null;
+    }
+    return owner;
+  }
+
   async getAll() {
-    const db = await openDB();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readonly');
-      const store = tx.objectStore(STORE_NAME);
-      const request = store.getAll();
-      request.onsuccess = () => resolve(request.result);
-      request.onerror = () => reject(request.error);
-    });
+    try {
+      const owner = this.getOwner();
+      const data = await $.ajax({
+        url: `${BASE_URL}/${STORE_NAME}`,
+        method: "GET",
+        headers: { 'owner-id': owner }
+      });
+      return data;
+    } catch (err) {
+      throw err;
+    }
   }
 
   async getById(id) {
-    const db = await openDB();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readonly');
-      const store = tx.objectStore(STORE_NAME);
-      const request = store.get(id);
-      request.onsuccess = () => resolve(request.result);
-      request.onerror = () => reject(request.error);
-    });
+    try {
+      const owner = this.getOwner();
+      const data = await $.ajax({
+        url: `${BASE_URL}/${STORE_NAME}/${id}`,
+        method: "GET",
+        headers: { 'owner-id': owner },
+      });
+      return data;
+    } catch (err) {
+      throw err;
+    }
   }
 
   async add(listModel) {
-    const db = await openDB();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readwrite');
-      const store = tx.objectStore(STORE_NAME);
-      const request = store.add(listModel);
-      request.onsuccess = () => resolve(request.result); // retorna o id
-      request.onerror = () => reject(request.error);
-    });
+    try {
+      const owner = this.getOwner();
+      let data;
+      if (owner) {
+        data = await $.ajax({
+          url: `${BASE_URL}/${STORE_NAME}`,
+          method: "POST",
+          headers: { 'owner-id': owner },
+          contentType: "application/json",
+          data: JSON.stringify(listModel)
+        });
+      }
+      else {
+        data = await $.ajax({
+          url: `${BASE_URL}/${STORE_NAME}`,
+          method: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(listModel)
+        });
+      }
+      if (data.owner) {
+        saveInLocalStorage("owner-id", data.owner);
+      }
+      return data;
+    } catch (err) {
+      console.error("Erro ao criar lista:", err);
+      throw err;
+    }
   }
 
-  async update(listModel) {
-    const db = await openDB();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readwrite');
-      const store = tx.objectStore(STORE_NAME);
-      const request = store.put(listModel);
-      request.onsuccess = () => resolve();
-      request.onerror = () => reject(request.error);
-    });
+  async update(id, listModel) {
+    try {
+      const owner = this.getOwner();
+      const data = await $.ajax({
+        url: `${BASE_URL}/${STORE_NAME}/${id}`,
+        method: "PUT",
+        contentType: "application/json",
+        headers: { 'owner-id': owner },
+        data: JSON.stringify(listModel)
+      });
+      return data;
+    } catch (err) {
+      console.error(`Erro ao atualizar lista ${id}:`, err);
+      throw err;
+    }
   }
 
   async delete(id) {
-    const db = await openDB();
-    return new Promise((resolve, reject) => {
-      const tx = db.transaction(STORE_NAME, 'readwrite');
-      const store = tx.objectStore(STORE_NAME);
-      const request = store.delete(id);
-      request.onsuccess = () => resolve();
-      request.onerror = () => reject(request.error);
-    });
-  }
-
-  async existsByName(name) {
-    const all = await this.getAll();
-    return all.find(l => l.name.toLowerCase() === name.toLowerCase()) || null;
+    try {
+      const owner = this.getOwner();
+      const data = await $.ajax({
+        url: `${BASE_URL}/${STORE_NAME}/${id}`,
+        method: "DELETE",
+        headers: { 'owner-id': owner },
+      });
+      return data;
+    } catch (err) {
+      console.error(`Erro ao deletar lista ${id}:`, err);
+      throw err;
+    }
   }
 }

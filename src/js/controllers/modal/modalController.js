@@ -38,7 +38,7 @@ export class ModalController {
 
     // Editar item existente
     EventBus.on("openEditModalItem", (e, itemData) => {
-      this.view.createItemContent(itemData); // Corrigido: passar objeto completo
+      this.view.createItemContent(itemData);
       this.view.show();
       this.view.setEditingId(itemData.id);
       this.handleCommonEvents("editItem");

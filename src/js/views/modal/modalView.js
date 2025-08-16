@@ -72,7 +72,7 @@ export class ModalView {
     `);
   }
 
-  createItemContent({ name = "", price = "", quantity = "" } = {}) {
+  createItemContent({ name = "", price = "", amount = "" } = {}) {
     const isEditing = !!name;
 
     this.modalContent.html(`
@@ -91,8 +91,8 @@ export class ModalView {
       </div>
 
       <div class="form-group">
-        <label for="quantity">Quantidade:</label>
-        <input type="number" id="quantity" name="quantity" value="${quantity}" min="1">
+        <label for="amount">Quantidade:</label>
+        <input type="number" id="amount" name="amount" value="${amount}" min="1">
       </div>
     </div>
 
@@ -105,7 +105,7 @@ export class ModalView {
     return {
       name: $("#itemNome").val().trim(),
       price: parseFloat($("#itemPrice").val()) || 0,
-      quantity: parseInt($("#quantity").val()) || 1
+      amount: parseInt($("#amount").val()) || 1
     };
   }
 
