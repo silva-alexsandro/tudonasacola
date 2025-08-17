@@ -4,12 +4,6 @@ import { DashboardController } from "./controllers/dashborad/dashboardController
 import { ModalController } from "./controllers/modal/modalController.js";
 import { ThemeDarkController } from "./controllers/theme/themeDarkController.js";
 
-$(window).on('load', function () {
-  $('#loading').fadeOut(400, function () {
-    $('#content').fadeIn(400);
-  });
-});
-
 $(document).ready(function () {
   const modalController = new ModalController();
   const themeController = new ThemeDarkController();

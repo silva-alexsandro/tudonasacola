@@ -1,22 +1,17 @@
 import { openDB } from "../db/indexdb.js";
 import { loadInLocalStorageItem, saveInLocalStorage } from "../db/handleLocalStorage.js";
+import { getOwner } from "../utils/getOwner.js";
 
 const STORE_NAME = "lists";
 const BASE_URL = "https://apitudonasacola.onrender.com";
 
 
 export class ListRepository {
-  getOwner() {
-    const owner = loadInLocalStorageItem("owner-id");
-    if (!owner) {
-      return null;
-    }
-    return owner;
-  }
 
   async getAll() {
     try {
-      const owner = this.getOwner()?.trim();
+      $('#loading').fadeIn();
+      const owner = getOwner()?.trim();
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}`,
         method: "GET",
@@ -25,12 +20,15 @@ export class ListRepository {
       return data;
     } catch (err) {
       throw err;
+    } finally {
+      $('#loading').fadeOut();
     }
   }
 
   async getById(id) {
     try {
-      const owner = this.getOwner()?.trim();
+      $('#loading').fadeIn();
+      const owner = getOwner()?.trim();
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "GET",
@@ -39,24 +37,29 @@ export class ListRepository {
       return data;
     } catch (err) {
       throw err;
+    } finally {
+      $('#loading').fadeOut();
     }
   }
 
   async add(listModel) {
     try {
-      const owner = this.getOwner()?.trim();
+      $('#loading').fadeIn();
+      const owner = getOwner()?.trim();
       let data;
       if (owner) {
+        console.log('no if passando o owner', owner)
         data = await $.ajax({
           url: `${BASE_URL}/${STORE_NAME}`,
           method: "POST",
-
           headers: { 'Authorization': `Bearer ${owner.trim()}` },
           contentType: "application/json",
           data: JSON.stringify(listModel)
         });
       }
       else {
+        console.log('no else n passa o owner', owner)
+
         data = await $.ajax({
           url: `${BASE_URL}/${STORE_NAME}`,
           method: "POST",
@@ -71,12 +74,15 @@ export class ListRepository {
     } catch (err) {
       console.error("Erro ao criar lista:", err);
       throw err;
+    } finally {
+      $('#loading').fadeOut();
     }
   }
 
   async update(id, listModel) {
     try {
-      const owner = this.getOwner()?.trim();
+      $('#loading').fadeIn();
+      const owner = getOwner()?.trim();
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "PUT",
@@ -88,12 +94,15 @@ export class ListRepository {
     } catch (err) {
       console.error(`Erro ao atualizar lista ${id}:`, err);
       throw err;
+    } finally {
+      $('#loading').fadeOut();
     }
   }
 
   async delete(id) {
     try {
-      const owner = this.getOwner()?.trim();
+      $('#loading').fadeIn();
+      const owner = getOwner()?.trim();
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "DELETE",
@@ -103,6 +112,8 @@ export class ListRepository {
     } catch (err) {
       console.error(`Erro ao deletar lista ${id}:`, err);
       throw err;
+    } finally {
+      $('#loading').fadeOut();
     }
   }
 }
