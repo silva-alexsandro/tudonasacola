@@ -19,7 +19,7 @@ export class ItemRepository {
       const data = await $.ajax({
         url: `${BASE_URL}/${idList}/${STORE_NAME}`,
         method: "GET",
-        headers: { 'Authorization': owner.trim() },
+        headers: { 'Authorization': `Bearer ${owner.trim()}` },
       });
       return data;
     } catch (err) {
@@ -32,7 +32,7 @@ export class ItemRepository {
     const data = await $.ajax({
       url: `${BASE_URL}/${idList}/${STORE_NAME}`,
       method: "POST",
-      headers: { 'Authorization': owner.trim() },
+      headers: { 'Authorization': `Bearer ${owner.trim()}` },
       contentType: "application/json",
       data: JSON.stringify(itemData)
     });
@@ -47,7 +47,7 @@ export class ItemRepository {
       const data = await $.ajax({
         url: `${BASE_URL}/${idList}/${STORE_NAME}/${idItem}`,
         method: "DELETE",
-        headers: { 'Authorization': owner.trim() },
+        headers: { 'Authorization': `Bearer ${owner.trim()}` },
       });
       return data;
     } catch (err) {

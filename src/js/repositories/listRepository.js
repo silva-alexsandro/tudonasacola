@@ -17,11 +17,10 @@ export class ListRepository {
   async getAll() {
     try {
       const owner = this.getOwner()?.trim();
-      console.log('getall owner: ', owner);
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}`,
         method: "GET",
-        headers: { 'Authorization': owner.trim() },
+        headers: { 'Authorization': `Bearer ${owner.trim()}` },
       });
       return data;
     } catch (err) {
@@ -35,7 +34,7 @@ export class ListRepository {
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "GET",
-        headers: { 'Authorization': owner.trim() },
+        headers: { 'Authorization': `Bearer ${owner.trim()}` },
       });
       return data;
     } catch (err) {
@@ -47,20 +46,17 @@ export class ListRepository {
     try {
       const owner = this.getOwner()?.trim();
       let data;
-      console.log('create owner: ', owner.trim());
       if (owner) {
-        console.log('create do if owner: ', owner.trim());
         data = await $.ajax({
           url: `${BASE_URL}/${STORE_NAME}`,
           method: "POST",
 
-          headers: { 'Authorization': owner.trim() },
+          headers: { 'Authorization': `Bearer ${owner.trim()}` },
           contentType: "application/json",
           data: JSON.stringify(listModel)
         });
       }
       else {
-        console.log('create do else owner: ', owner.trim());
         data = await $.ajax({
           url: `${BASE_URL}/${STORE_NAME}`,
           method: "POST",
@@ -85,7 +81,7 @@ export class ListRepository {
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "PUT",
         contentType: "application/json",
-        headers: { 'Authorization': owner.trim() },
+        headers: { 'Authorization': `Bearer ${owner.trim()}` },
         data: JSON.stringify(listModel)
       });
       return data;
@@ -101,7 +97,7 @@ export class ListRepository {
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "DELETE",
-        headers: { 'Authorization': owner.trim() },
+        headers: { 'Authorization': `Bearer ${owner.trim()}` },
       });
       return data;
     } catch (err) {
