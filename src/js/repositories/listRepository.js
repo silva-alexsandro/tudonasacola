@@ -2,7 +2,7 @@ import { openDB } from "../db/indexdb.js";
 import { loadInLocalStorageItem, saveInLocalStorage } from "../db/handleLocalStorage.js";
 
 const STORE_NAME = "lists";
-const BASE_URL ="https://apitudonasacola.onrender.com";
+const BASE_URL = "https://apitudonasacola.onrender.com";
 
 
 export class ListRepository {
@@ -16,7 +16,8 @@ export class ListRepository {
 
   async getAll() {
     try {
-      const owner = this.getOwner();
+      const owner = this.getOwner()?.trim();
+      console.log('getall owner: ', owner);
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}`,
         method: "GET",
@@ -30,7 +31,7 @@ export class ListRepository {
 
   async getById(id) {
     try {
-      const owner = this.getOwner();
+      const owner = this.getOwner()?.trim();
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "GET",
@@ -44,9 +45,11 @@ export class ListRepository {
 
   async add(listModel) {
     try {
-      const owner = this.getOwner();
+      const owner = this.getOwner()?.trim();
       let data;
+      console.log('create owner: ', owner);
       if (owner) {
+        console.log('create do if owner: ', owner);
         data = await $.ajax({
           url: `${BASE_URL}/${STORE_NAME}`,
           method: "POST",
@@ -56,6 +59,7 @@ export class ListRepository {
         });
       }
       else {
+        console.log('create do else owner: ', owner);
         data = await $.ajax({
           url: `${BASE_URL}/${STORE_NAME}`,
           method: "POST",
@@ -75,7 +79,7 @@ export class ListRepository {
 
   async update(id, listModel) {
     try {
-      const owner = this.getOwner();
+      const owner = this.getOwner()?.trim();
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "PUT",
@@ -92,7 +96,7 @@ export class ListRepository {
 
   async delete(id) {
     try {
-      const owner = this.getOwner();
+      const owner = this.getOwner()?.trim();
       const data = await $.ajax({
         url: `${BASE_URL}/${STORE_NAME}/${id}`,
         method: "DELETE",
