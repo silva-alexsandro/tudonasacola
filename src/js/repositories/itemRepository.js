@@ -19,7 +19,7 @@ export class ItemRepository {
       const data = await $.ajax({
         url: `${BASE_URL}/${idList}/${STORE_NAME}`,
         method: "GET",
-        headers: { 'owner-id': owner }
+        headers: { 'Authorization': owner.trim() },
       });
       return data;
     } catch (err) {
@@ -32,7 +32,7 @@ export class ItemRepository {
     const data = await $.ajax({
       url: `${BASE_URL}/${idList}/${STORE_NAME}`,
       method: "POST",
-      headers: { 'owner-id': owner },
+      headers: { 'Authorization': owner.trim() },
       contentType: "application/json",
       data: JSON.stringify(itemData)
     });
@@ -47,7 +47,7 @@ export class ItemRepository {
       const data = await $.ajax({
         url: `${BASE_URL}/${idList}/${STORE_NAME}/${idItem}`,
         method: "DELETE",
-        headers: { 'owner-id': owner },
+        headers: { 'Authorization': owner.trim() },
       });
       return data;
     } catch (err) {
@@ -56,16 +56,3 @@ export class ItemRepository {
     }
   }
 }
-
-
-
-//   async add(itemModel) {
-//   const db = await openDB();
-//   return new Promise((resolve, reject) => {
-//     const tx = db.transaction(STORE_NAME, 'readwrite');
-//     const store = tx.objectStore(STORE_NAME);
-//     const request = store.add(itemModel);
-//     request.onsuccess = () => resolve(request.result);
-//     request.onerror = () => reject(request.error);
-//   });
-// }
