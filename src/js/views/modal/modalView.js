@@ -80,19 +80,19 @@ export class ModalView {
 
     <div class="form-group">
       <label for="itemNome">Nome do item:</label>
-      <input type="text" id="itemNome" value="${name}">
+      <input type="text" id="itemNome" value="${name}" placeholder="Digite o nome do item...">
       <small id="error-message" class="error hidden">Mínimo de três letras</small>
     </div>
 
     <div class="form-row">
       <div class="form-group">
         <label for="itemPrice">Valor:</label>
-        <input type="number" id="itemPrice" value="${price}" step="0.01" min="0">
+        <input type="number" id="itemPrice" value="${price}" step="0.01" min="0" placeholder="0,00">
       </div>
 
       <div class="form-group">
         <label for="amount">Quantidade:</label>
-        <input type="number" id="amount" name="amount" value="${amount}" min="1">
+        <input type="number" id="amount" name="amount" value="${amount}" min="1" placeholder="1">
       </div>
     </div>
 
