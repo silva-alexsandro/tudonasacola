@@ -39,10 +39,12 @@
   padding: 0 1rem;
   width: 100%;
 }
-main.space_to_header{
+
+main.space_to_header {
   margin: 8rem auto;
 
 }
+
 .scroll_ghost {
   min-height: calc(100vh - 30vh);
   max-height: calc(100vh - 30vh);
@@ -84,4 +86,19 @@ body.dark_mode .boxImage img {
 label {
   font-weight: bold;
   margin-bottom: 6px;
+}
+
+.pagesContainer {
+  background: var(--color-bg-primary);
+  padding: var(--space-xl);
+}
+
+.pagesContainer h2,
+.pagesContainer h3 {
+  margin: 2rem 0;
+}
+
+.pagesContainer p {
+  margin-top: .8rem;
+  text-align: justify;
 }

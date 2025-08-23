@@ -45,7 +45,7 @@
 
 #home_main .box_start {
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-sm);
   max-width: 576px;
   margin: 0 auto;
   text-align: center;
@@ -64,4 +64,37 @@
 
 #home_main .box_start a {
   background: var(--color-accent);
+}
+
+footer {
+  margin: var(--space-sm) 0;
+}
+
+footer .viewport_box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .viewport_box section {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .viewport_box section a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 592px) {
+  footer .viewport_box section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }
