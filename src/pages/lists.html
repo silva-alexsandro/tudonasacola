@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="Alexsandro Silva">
@@ -25,6 +26,7 @@
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
   <header id="headerTop">
     <nav class="navbar flex">
@@ -32,7 +34,7 @@
         <img src="../assets/img/logo.png" alt="logo da aplicação tudo dentro da sacola">
       </a>
       <ul class="navbar_nav">
-        <li class="nav_item toggle">
+        <li class="nav_item toggleTheme">
           <label for="switchThemeDark" title="Alternar tema" aria-label="Alternar entre modo claro e escuro">
             <input id="switchThemeDark" type="checkbox" name="theme" />
             <i id="icon-theme-on" class="icon ph"></i>
@@ -45,7 +47,7 @@
   <main id="main content">
     <div class="viewport_box">
       <section class="wrapper_search">
-        <button id="createList" class="btn btn_primary btn_small"><i class="ph ph-plus"></i>Nova Lista
+        <button id="createList" class="btn btn_primary btn_small"><i class="ph ph-plus"></i> Criar Lista
         </button>
       </section>
       <section id="wrapper_lists" class="scroll_ghost"></section>
@@ -66,4 +68,5 @@
     <p>Aguenta aí, tô buscando seus dados...</p>
   </div>
 </body>
+
 </html>

@@ -41,9 +41,18 @@
   margin-top: 1.2rem;
 }
 
+.btn_extasmall {
+  padding: var(--space-xs);
+}
+
 .btn_small {
   padding: var(--space-sm);
 }
+
+.btn_medium {
+  padding: var(--space-md);
+}
+
 
 .btn i {
   font-weight: 700;

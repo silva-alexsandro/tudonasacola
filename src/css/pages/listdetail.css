@@ -1,21 +1,24 @@
 #navbar__left {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 #navbar__left a {
-  margin-right: var(--space-xs);
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 700;
-}
-
-.navbar__actions_buttons {
+  height: 100%;
   display: flex;
-  gap: 1rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
-
+.navbar_nav .nav_item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
 #stats {
   margin-top: var(--space-xxs);
   display: grid;
@@ -92,6 +95,7 @@
     behavior: 'smooth';
     gap: 1.2rem;
   }
+
   .stat__box {
     min-width: 170px;
   }
