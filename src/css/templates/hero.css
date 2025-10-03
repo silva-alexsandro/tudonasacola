@@ -1,0 +1,69 @@
+#hero {
+ min-height: 90dvh;
+ background: var(--color-bg-secondary);
+}
+#hero .limit-viewport section.flex {
+ gap: var(--space-32);
+}
+#hero .hero__content .hero__title {
+ font-weight: 700;
+}
+#hero .hero__content .hero__description {
+ max-width: 470px;
+}
+#hero .hero__content .hero__actions {
+ gap: var(--space-16);
+ justify-content: start;
+}
+#hero .hero__content .hero__benefits {
+ width: 100%;
+ gap: var(--space-8);
+}
+#hero .hero__content .hero__benefits .hero__benefit {
+ display: flex;
+ gap: var(--space-4);
+ font-weight: 300;
+}
+#hero .hero__content .hero__benefits .hero__benefit i {
+ color: var(--color-success);
+ font-weight: 600;
+}
+.hero__image {
+ border-radius: var(--radius-md);
+ min-width: 28rem;
+ display: flex;
+ justify-content: center;
+ overflow: hidden;
+ align-self: center;
+}
+
+.hero__image img {
+ width: 100%;
+}
+@media (min-width: 576px) {
+ #hero .limit-viewport section.flex {
+  flex-direction: row;
+  justify-content: space-around;
+  /* margin-top: 32px; */
+ }
+ #hero .limit-viewport section.flex .hero__content {
+  max-width: 576px;
+ }
+ .hero__image {
+  max-height: 40rem;
+  max-width: 50rem;
+ }
+}
+
+@media (min-width: 768px) {
+ #hero {
+  display: flex;
+  align-items: center;
+ }
+ #hero .limit-viewport section.flex {
+  flex-wrap: nowrap;
+ }
+ #hero .limit-viewport section.flex .hero__content {
+  align-self: center;
+ }
+}

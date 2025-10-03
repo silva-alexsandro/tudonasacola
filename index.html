@@ -1,66 +1,364 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="author" content="Alexsandro Silva">
-  <meta name="title" content="Lista de Compras Compartilhaveis - Crie e edite suas listas facilmente">
-  <meta name="description"
-    content="Organize sua vida com o Lista de Compras Compartilhaveis — uma forma simples e rápida de criar, editar e salvar listas.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Alexsandro Silva" />
+  <meta
+   name="title"
+   content="Lista de Compras Compartilhaveis - Crie e edite suas listas facilmente"
+  />
+  <meta
+   name="description"
+   content="Organize sua vida com o Lista de Compras Compartilhaveis — uma forma simples e rápida de criar, editar e salvar listas."
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
   <title>Tudo na sacola</title>
   <!-- google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+   rel="stylesheet"
+  />
   <!-- icons  -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-  <link rel="stylesheet" type="text/css"
-    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+  />
   <!-- Favicon -->
-  <link rel="shortcut icon" href="./src/assets/favicon/favicon.ico" type="image/x-icon">
+  <link
+   rel="shortcut icon"
+   href="./src/assets/favicon/favicon.ico"
+   type="image/x-icon"
+  />
   <!-- CSS -->
-  <link rel="stylesheet" href="./src/css/main.css">
+  <link rel="stylesheet" href="./src/css/main.css" />
   <!-- Jquery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-</head>
-<body>
-  <main id="home_main">
-    <div class="viewport_box flex">
-      <section class="hero">
-        <img src="./src/assets/img/logo.png" alt="logo da aplicação" class="logo">
+ </head>
+ <body>
+  <div class="layout-base">
+   <header id="top" class="border-bottom border-solid border-current">
+    <nav class="navbar limit-viewport flex flex-between">
+     <a
+      href="./index.html"
+      class="navbar_brand"
+      aria-label="Ir para a página inicial"
+     >
+      <img
+       src="./src/assets/img/logo.png"
+       alt="Logo da aplicação Tudo na Sacola, um serviço para organizar suas compras de forma inteligente"
+      />
+     </a>
+     <ul class="navbar_nav">
+      <li class="nav_item">
+       <a
+        href="./pages/dashboard.html"
+        class="btn btn--primary"
+        aria-label="Ir para o painel de controle"
+        >Entrar</a
+       >
+      </li>
+     </ul>
+    </nav>
+   </header>
 
-        <h1 class="title">Tudo na sacola</h1>
-        <p>
-          O jeito mais simples de gerenciar suas listas de compras. Adicione itens com nome, valor e quantidade, marque
-          o que já comprou e acompanhe o total gasto sem complicação. Rápido, prático e sem estresse.
+   <main>
+    <section id="hero">
+     <div class="limit-viewport">
+      <section class="flex">
+       <article class="hero__content flex flex-column">
+        <h1 class="hero__title font-size-xxl mb-24">
+         Organize suas compras<span class="text-highighlight">
+          de forma inteligente</span
+         >
+        </h1>
+        <p class="hero__description text mb-24">
+         Crie suas listas de compras, controle seus gastos, compartilhe com a
+         família e nunca mais esqueça nada.
         </p>
+        <div class="hero__actions flex flex-center mb-16">
+         <a
+          href="./pages/dashboard.html"
+          class="btn btn--primary"
+          aria-label="Comece agora para criar suas listas de compras"
+          >Começar Agora</a
+         >
+         <a
+          href="./about.html"
+          class="btn btn--secondary"
+          aria-label="Saiba mais sobre a aplicação Tudo na Sacola"
+          >Saber Mais</a
+         >
+        </div>
+        <div class="hero__benefits font-size-sm flex flex-nowrap">
+         <span class="hero__benefit flex flex-center">
+          <i class="ph ph-check-circle"></i> Gratuito
+         </span>
+         <span class="hero__benefit flex flex-center">
+          <i class="ph ph-check-circle"></i> Sem cadastro
+         </span>
+         <span class="hero__benefit flex flex-center">
+          <i class="ph ph-check-circle"></i> Fácil de usar
+         </span>
+        </div>
+       </article>
+       <div class="hero__image bg-gradient">
+        <img
+         src="./src/assets/img/hero-img.png"
+         alt="Imagem ilustrativa de uma pessoa utilizando a aplicação Tudo na Sacola para organizar suas compras."
+         title="Imagem de uma pessoa organizando compras"
+        />
+       </div>
       </section>
-      <div class="box_start">
-        <h2>Pronto para começar ?</h2>
-        <p>
-          Crie suas listas e descubra como é fácil ter tudo organizado em um só lugar.
-        </p>
-        <a href="./src/pages/lists.html" title="Começar agora" class="btn">Começar agora</a>
-      </div>
-    </div>
-  </main>
-  <footer>
-    <div class="viewport_box">
-    <section>
-      <a href="./src/pages/privacy.html">Política de Privacidade</a>
-      <i class="ph ph-line-vertical"></i>
-      <a href="./src/pages/cookie.html">Política de Cookies</a>
-      <i class="ph ph-line-vertical"></i>
-      <a href="./src/pages/about.html">Sobre Tudo na sacola</a>
+     </div>
     </section>
-    <section>
-      <p>
-        © 2025 <a href="https://www.linkedin.com/in/dasilva-alexsandro/">Alexsandro Silva</a>
+    <section id="features" class="mt-48">
+     <div class="limit-viewport">
+      <section class="flex flex-column">
+       <h2 class="font-size-lg text-center mb-16">
+        Por que escolher o
+        <span class="text-highighlight">Tudo na Sacola ?</span>
+       </h2>
+       <p class="text text-center mb-40">
+        Descubra como o Tudo na Sacola pode simplificar sua vida e economizar
+        seu tempo e dinheiro.
+       </p>
+       <div class="cards">
+        <article
+         class="card border border-solid border-current flex flex-center flex-column p-16"
+        >
+         <div
+          class="card__header border border-solid border-current flex flex-center p-8"
+         >
+          <i class="ph ph-list-checks"></i>
+         </div>
+         <div class="card__body flex flex-center flex-column">
+          <h2 class="card__title text-center">Listas Inteligentes</h2>
+          <span class="card_description">
+           Organize suas compras de forma prática e eficiente
+          </span>
+         </div>
+        </article>
+        <article
+         class="card border border-solid border-current flex flex-center flex-column p-16"
+        >
+         <div
+          class="card__header border border-solid border-current flex flex-center p-8"
+         >
+          <i class="ph ph-calculator"></i>
+         </div>
+         <div class="card__body flex flex-center flex-column">
+          <h2 class="card__title text-center">Controle Total</h2>
+          <span class="card_description">
+           Acompanhe o que já foi comprado e gerencie gastos
+          </span>
+         </div>
+        </article>
+        <article
+         class="card border border-solid border-current flex flex-center flex-column p-16"
+        >
+         <div
+          class="card__header border border-solid border-current flex flex-center p-8"
+         >
+          <i class="ph ph-users"></i>
+         </div>
+         <div class="card__body flex flex-center flex-column">
+          <h2 class="card__title text-center">Compartilhamento</h2>
+          <span class="card_description">
+           Compartilhe listas com família e amigos em tempo real
+          </span>
+         </div>
+        </article>
+        <article
+         class="card border border-solid border-current flex flex-center flex-column p-16"
+        >
+         <div
+          class="card__header border border-solid border-current flex flex-center p-8"
+         >
+          <i class="ph ph-clock"></i>
+         </div>
+         <div class="card__body flex flex-center flex-column">
+          <h2 class="card__title text-center">Histórico</h2>
+          <span class="card_description">
+           Acesse listas antigas e arquive as que não precisa mais. Tudo
+           organizadinho.
+          </span>
+         </div>
+        </article>
+        <article
+         class="card border border-solid border-current flex flex-center flex-column p-16"
+        >
+         <div
+          class="card__header border border-solid border-current flex flex-center p-8"
+         >
+          <i class="ph ph-device-mobile-camera"></i>
+         </div>
+         <div class="card__body flex flex-center flex-column">
+          <h2 class="card__title text-center">Mobile First</h2>
+          <span class="card_description">
+           Interface otimizada para celular. Use no supermercado de forma
+           prática e intuitiva.
+          </span>
+         </div>
+        </article>
+        <article
+         class="card border border-solid border-current flex flex-center flex-column p-16"
+        >
+         <div
+          class="card__header border border-solid border-current flex flex-center p-8"
+         >
+          <i class="ph ph-star"></i>
+         </div>
+         <div class="card__body flex flex-center flex-column">
+          <h2 class="card__title text-center">Favoritos</h2>
+          <span class="card_description">
+           Favorite suas listas mais usadas, duplique listas recorrentes e
+           mantenha tudo organizado.
+          </span>
+         </div>
+        </article>
+       </div>
+      </section>
+     </div>
+    </section>
+
+    <section id="faq" class="mt-48 bg-secondary pt-32 pb-32">
+     <div class="limit-viewport p-16">
+      <h2 class="font-size-lg mb-24 text-center">Perguntas Frequentes</h2>
+      <article
+       class="faq__item border-bottom border-solid border-current pt-16 pb-16 pr-0 pl-0"
+      >
+       <input type="checkbox" id="faq1" class="faq-toggle" />
+       <label for="faq1" class="faq-question text pr-24">
+        Preciso criar uma conta para usar?
+       </label>
+       <div class="faq-answer font-size-sm">
+        Não! Você pode começar a usar o serviço imediatamente, sem precisar se
+        cadastrar.
+       </div>
+      </article>
+      <article
+       class="faq__item border-bottom border-solid border-current pt-16 pb-16 pr-0 pl-0"
+      >
+       <input type="checkbox" id="faq2" class="faq-toggle" />
+       <label for="faq2" class="faq-question text pr-24"
+        >O Tudo na Sacola é realmente gratuito?</label
+       >
+       <div class="faq-answer font-size-sm text-adapt">
+        Sim. A ferramenta é 100% gratuita e sem pegadinhas.
+       </div>
+      </article>
+
+      <article
+       class="faq__item border-bottom border-solid border-current pt-16 pb-16 pr-0 pl-0"
+      >
+       <input type="checkbox" id="faq3" class="faq-toggle" />
+       <label for="faq3" class="faq-question text pr-24"
+        >Posso compartilhar minhas listas?</label
+       >
+       <div class="faq-answer font-size-sm text-adapt">
+        Sim. Você pode enviar suas listas para amigos e familiares com apenas um
+        clique.
+       </div>
+      </article>
+
+      <article
+       class="faq__item border-bottom border-solid border-current pt-16 pb-16 pr-0 pl-0"
+      >
+       <input type="checkbox" id="faq4" class="faq-toggle" />
+       <label for="faq4" class="faq-question text pr-24">Funciona no celular?</label>
+       <div class="faq-answer font-size-sm text-adapt">
+        Sim. O site é responsivo e funciona perfeitamente em smartphones,
+        tablets e computadores.
+       </div>
+      </article>
+     </div>
+    </section>
+
+    <section id="cta" class="mt-48 flex flex-center mb-4">
+     <div class="limit-viewport flex flex-column flex-center">
+      <h2 class="font-size-lg">
+       Pronto para <span class="text-highighlight">começar</span> ?
+      </h2>
+      <p class="text text-center">
+       Crie suas listas e descubra como é fácil ter tudo organizado em um só
+       lugar.
       </p>
+      <a
+       href="./pages/dashboard.html"
+       title="Começar agora"
+       class="btn btn--primary gap-8"
+      >
+       Crie sua primeira lista
+       <i class="ph ph-star"></i>
+      </a>
+     </div>
     </section>
+   </main>
+
+   <footer
+    class="border-2-top border-solid border-current p-16 flex flex-column"
+   >
+    <section class="font-size-sm flex flex-nowrap flex-center mb-24">
+     <a href="./privacy.html">Política de Privacidade</a>
+     <i class="ph ph-line-vertical mr-4"></i>
+     <a href="./cookie.html">Política de Cookies</a>
+     <i class="ph ph-line-vertical mr-4"></i>
+     <a href="./about.html">Sobre Tudo na sacola</a>
+    </section>
+    <p class="text-center font-size-sm">
+     Desenvolvidor por
+     <a
+      href="https://www.linkedin.com/in/dasilva-alexsandro/"
+      target="_blank"
+      rel="noopener noreferrer"
+     >
+      Alexsandro Silva
+     </a>
+    </p>
+
+    <div id="button-top-page">
+     <a href="#top"> ^ </a>
     </div>
-  </footer>
-</body>
+   </footer>
+  </div>
+  <!-- modal 
+  <div
+   id="home"
+   class="modal"
+   role="dialog"
+   aria-modal="true"
+   aria-labelledby="modalTitle"
+  >
+   <div class="modal__overlay"></div>
+   <div class="modal__content">
+    <div class="modal__body">
+     <h3 class="font-size-base">
+      Este website utiliza Cookies e as suas Preferências de Privacidade são
+      importantes para nós.
+     </h3>
+     <p class="font-size-sm">
+      Usamos cookies para oferecer a melhor experiência possível ao usuário. Ao
+      usar os serviços do Tudo na Sacola, você aceita o uso de cookies de acordo
+      com suas seleções. Para mais informações, consulte nossa
+
+      <a href="./privacy.html" class="text-underline">
+       Política de Privacidade </a
+      >.
+     </p>
+    </div>
+    <div class="modal__footer mt-24">
+     <button id="js-acepty">Aceitar Cookies</button>
+    </div>
+   </div>
+  </div>-->
+ </body>
 </html>

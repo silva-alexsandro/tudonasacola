@@ -15,8 +15,8 @@ export class ThemeDarkView {
   }
   applyTheme(isDark) {
     $('body').toggleClass('dark_mode', isDark);
-    $('#icon-theme-on').toggleClass('ph-sun', isDark);
-    $('#icon-theme-on').toggleClass('ph-moon', !isDark);
+    $('#js-theme').toggleClass('ph-sun', isDark);
+    $('#js-theme').toggleClass('ph-moon', !isDark);
     
   }
   setButtonState(isDark) {

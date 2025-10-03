@@ -1,0 +1,31 @@
+footer {
+ position: relative;
+}
+footer #button-top-page {
+ position: absolute;
+ bottom: 15px;
+ right: 30px;
+ border: 1px solid var(--color-text-secondary);
+ border-radius: var(--radius-full);
+ width: 2rem;
+ height: 2rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ overflow: hidden;
+ padding: 0.5rem;
+ cursor: pointer;
+ transition: all 0.3s ease-in;
+}
+footer #button-top-page:hover {
+ bottom: 17px;
+}
+footer #button-top-page a {
+ display: block;
+ align-self: center;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 600;
+ color: var(--color-text-secondary);
+}

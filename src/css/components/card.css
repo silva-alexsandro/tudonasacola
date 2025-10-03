@@ -1,8 +1,105 @@
+.lista-card__footer,
+.lista-card__header,
+.lista-card {
+ display: flex;
+}
+
+.lista-card {
+ border: 1px solid var(--color-border);
+ padding: var(--space-20);
+ flex-direction: column;
+ gap: var(--space-16);
+ background: var(--color-bg-secondary);
+ border-radius: var(--radius-sm);
+ transition: all 0.3s ease-in-out;
+ max-height: 165px;
+}
+
+.lista-card__header,
+.lista-card__info p,
+.lista-card__footer {
+ align-items: center;
+ justify-content: space-between;
+}
+
+.lista-card-favorite {
+ display: none;
+}
+.lista-card-favorite--active {
+ color: var(--color-favorite);
+ font-weight: 600;
+ display: block;
+}
+
+.lista-card__info p {
+ display: inline-flex;
+ gap: var(--space-4);
+}
+
+.lista-card__footer span {
+ width: 50%;
+ text-align: center;
+}
+.lista-card__acoes {
+ display: flex;
+ height: 100%;
+ justify-content: space-between;
+ align-items: center;
+ visibility: hidden;
+}
+#arviched .lista-card__acoes {
+ align-items: center;
+ justify-content: flex-end;
+}
+
+.lista-card__acoes button {
+ text-align: center;
+ padding: var(--space-8);
+ background: none;
+ border: transparent;
+ border-radius: var(--radius-xs);
+ transition: all 0.2s ease-in;
+}
+.lista-card__acoes button i {
+ font-size: 1.6rem;
+}
+.lista-card__acoes button i.ph-trash {
+ color: var(--color-danger);
+}
+.lista-card__acoes button:hover {
+ background: linear-gradient(135deg, #d6ff57 0%, #00c853 70%);
+ color: var(--color-white);
+ cursor: pointer;
+}
+
+.lista-card:hover {
+ box-shadow: 0px 2px 4px 2px rgba(27, 199, 90, 0.4);
+ -webkit-box-shadow: 0px 2px 4px 2px rgba(27, 199, 90, 0.4);
+ -moz-box-shadow: 0px 2px 4px 2px rgba(27, 199, 90, 0.4);
+}
+.lista-card:hover .lista-card__acoes,
+.lista-card:hover .lista-card__header h2 {
+ visibility: visible;
+ color: var(--color-success);
+}
+/*
+font-size-sm text-color-secondary"{}
+
+.btn btn--primary btn--abrir text-center">Abrir</a>{}
+           .ph ph-heart"></i></button>{}
+.ph ph-pencil"></i></button>{}
+.ph ph-copy"></i></button>{}
+.ph ph-trash"></i></button>{}
+          </div>
+         </footer>
+        </article>
+
 .cards {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 45vw, 230px), 1fr));
-  padding-bottom: var(--space-xs);
+  /* grid-template-columns: 1fr; 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
   transition: all 0.25s ease;
 }
 
@@ -12,7 +109,7 @@ article.card {
   border: 1px solid var(--color-border);
   padding: var(--space-sm);
   transition: transform .14s ease, box-shadow .14s ease;
-  /* cursor: grab; */
+  /* cursor: grab; 
 }
 
 .card.done {
@@ -42,26 +139,16 @@ article.card.dragging {
   cursor: pointer;
   width: 3rem;
   height: 3rem;
-  clip-path: circle(50% at 50% 50%);
-  flex-shrink: 0;
 }
 
 .card__header h3 {
-  flex: 1;
-  min-width: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-word;
   font-size: 1.6rem;
-  margin: 0;
 }
 
 .meta {
   margin: 12px 0;
   font-size: 14px;
+  color: var(--muted);
 }
 
 dl {
@@ -73,6 +160,7 @@ dt {
   clear: left;
   width: 60%;
   font-weight: 600;
+  color: var(--muted);
 }
 
 dd {
@@ -121,13 +209,4 @@ hr {
 .card-footer button.toDelete {
   color: var(--color-danger);
 }
-
-@media (max-width: 519px) {
-  .card__header h3 {
-    font-size: 1.4rem;
-  }
-
-  dt,dd,.total {
-    font-size: 1.2rem;
-  }
-}
+  */

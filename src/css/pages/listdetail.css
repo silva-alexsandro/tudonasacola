@@ -1,31 +1,26 @@
 #navbar__left {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 
 #navbar__left a {
-  font-size: 2rem;
+  margin-right: var(--space-xs);
+  font-size: 2.4rem;
   font-weight: 700;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.navbar_nav .nav_item {
-  height: 100%;
+.navbar__actions_buttons {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  justify-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #stats {
   margin-top: var(--space-xxs);
   display: grid;
-  grid-template-columns: repeat(3, minmax(clamp(150px, 45vw, 230px), 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin-top: var(--space-xs);
 }
 
@@ -39,7 +34,6 @@
 }
 
 .stat__box header {
-  text-wrap: nowrap;
   box-shadow: none;
   color: var(--color-text-secondary);
   margin-bottom: var(--radius-xs);
@@ -91,10 +85,14 @@
   }
 
   #stats {
+    grid-template-rows: 1fr;
     overflow: scroll;
     overflow: auto;
     scrollbar-width: none;
     behavior: 'smooth';
     gap: 1.2rem;
+  }
+  .stat__box {
+    min-width: 170px;
   }
 }

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Alexsandro Silva" />
+  <meta
+   name="title"
+   content="Lista de Compras Compartilhaveis - Crie e edite suas listas facilmente"
+  />
+  <meta
+   name="description"
+   content="Organize sua vida com o Lista de Compras Compartilhaveis — uma forma simples e rápida de criar, editar e salvar listas."
+  />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <title>Tudo na sacola | dashboard</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+   rel="stylesheet"
+  />
+  <!-- icons  -->
+  <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link
+   rel="stylesheet"
+   type="text/css"
+   href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+  />
+  <!-- Favicon -->
+  <link
+   rel="shortcut icon"
+   href="../src/assets/favicon/favicon.ico"
+   type="image/x-icon"
+  />
+  <!-- CSS -->
+  <link rel="stylesheet" href="../src/css/main.css" />
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ </head>
+ <body>
+  <div class="layout-base">
+   <header class="border-bottom border-solid border-current">
+    <nav class="navbar limit-viewport flex flex-between">
+     <a
+      href="./dashboard.html"
+      class="navbar_brand"
+      aria-label="Ir para a página inicial"
+     >
+      <img
+       src="../src/assets/img/logo.png"
+       alt="Logo da aplicação Tudo na Sacola, um serviço para organizar suas compras de forma inteligente"
+      />
+     </a>
+     <ul class="navbar_nav">
+      <li class="nav_item toggle">
+       <label
+        for="switchThemeDark"
+        title="Alternar tema"
+        aria-label="Alternar entre modo claro e escuro"
+       >
+        <input id="switchThemeDark" type="checkbox" name="theme" />
+        <i id="js-theme" class="ph"></i>
+       </label>
+      </li>
+      <!-- <li class="nav_item">
+       <a
+        href="#"
+        class="btn btn--secondary flex flex-center gap-4"
+       >
+        <i class="ph ph-chart-line-up"></i>
+        <span>  </span>
+       </a>
+      </li> -->
+      <li class="nav_item">
+       <a
+        href="./archived.html"
+        class="btn btn--secondary flex flex-center gap-4"
+        title="Arquivadas"
+       >
+        <i class="ph ph-box-arrow-down icon"></i>
+        <span> Arquivadas </span>
+       </a>
+      </li>
+      <li class="nav_item">
+       <button
+        id="js-createList"
+        class="btn btn--primary flex flex-center gap-4"
+        title="Criar nova lista"
+        aria-label="Criar nova lista"
+       >
+        <i class="ph ph-plus icon"></i>
+        <span>Nova Lista</span>
+       </button>
+      </li>
+     </ul>
+    </nav>
+   </header>
+
+   <main>
+    <section class="mt-24"></section>
+    <section class="mt-24">
+     <div class="limit-viewport">
+      <div class="mb-8 flex flex-between">
+       <h2 class="font-size-md font-weight-bold">Minhas Listas</h2>
+
+       <button
+        aria-label="Excluir todas as listas"
+        title="Excluir todas as listas"
+        class="flex flex-center gap-4 btn btn--delete"
+       >
+        <i class="ph ph-trash icon"></i>
+        <span>Excluir Listas</span>
+       </button>
+      </div>
+      <section id="js-lists">
+       <!-- bloco inserido via js -->
+       
+      </section>
+     </div>
+    </section>
+   </main>
+
+   <footer class="mt-4 border-2-top border-solid border-current p-8">
+    <div class="limit-viewport flex flex-between">
+     <p class="font-size-sm text-color-secondary">
+      Desenvolvidor por
+      <a
+       href="https://www.linkedin.com/in/dasilva-alexsandro/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="text-underline"
+      >
+       Alexsandro Silva
+      </a>
+     </p>
+     <p class="font-size-sm text-color-secondary">
+      Gostou da aplicação e gostaria de contribuir
+      <span id="js-modal-kitty" class="js-actions">
+       <i class="ph ph-coffee"></i>
+      </span>
+     </p>
+    </div>
+   </footer>
+  </div>
+  <script type="module" src="../src/js/app.js" defer></script>
+ </body>
+</html>

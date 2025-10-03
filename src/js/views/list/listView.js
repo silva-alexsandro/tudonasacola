@@ -1,85 +1,158 @@
-import { formatShortDate } from '../../utils/formatShortDate.js'
+import { formatShortDate } from "../../utils/formatShortDate.js";
 export class ListView {
-  render(lists) {
-    const container = $("#wrapper_lists");
-    container.empty();
+ render(lists) {
+  const container = $("#js-lists");
+  container.empty();
 
-    if (lists.length === 0) {
-      container.append(`
-      <div class='empty'>
-        <h1>Que pena!</h1>
-        <p>Você <strong>ainda não</strong> possui nenhuma lista.</p>
-        <div class="boxImage">
-         <img src="../assets/img/Illustration.svg" alt="ilustração de um homem com a mão para cima">
+  if (lists.length === 0) {
+   container.append(`
+      <article
+        class="bg-secondary border-2 border-current border-dashed mt-40 flex flex-column flex-center p-24"
+       >
+        <div class="circle circle__border">
+         <i class="ph ph-list-magnifying-glass"></i>
         </div>
-      </div>
+        <p class="font-size-lg text-center mt-16 font-weight-bold">
+         Nenhuma lista ainda
+        </p>
+        <span class="font-size-sm mt-8 text-center text-color-secondary">
+         Crie sua primeira lista de compras para começar a organizar suas
+         compras.
+        </span>
+       </article>
     `);
-    } else {
-      const ul = $("<ul class='scroll_ghost list_view'></ul>");
-      lists.forEach((list) => {
-        const formattedDate = formatShortDate(list.createdDate);
-        ul.append(`
-        <li class='list_view_item'>
-          <div data-id="${list.id}" class="toDetails info">
-            <span class="date"><i class="ph ph-calendar-blank"></i> ${formattedDate}</span>
-            <span class="separator">|</span>
-            <span class="name text-elipse" title="${list.name}">${list.name}</span>
+  } else {
+   const ul = $("<ul class='grid fill scroll_ghost pb-20'></ul>");
+   lists.forEach((list) => {
+    const formattedDate = formatShortDate(list.createdDate);
+    ul.append(`
+        <li class="lista-card">
+         <div class="lista-card__header">
+          <h2 class="sub-title" title="${list.name}">${list.name}</h2>
+          <span class="lista-card-favorite" aria-label="Lista favoritada">
+           <i class="ph ph-heart"></i>
+          </span>
+         </div>
+
+         <div class="lista-card__info font-size-sm text-color-secondary">
+          <p>
+           <i class="ph ph-calendar-blank"></i>
+           <time datetime="${formattedDate}"> ${formattedDate}</time>
+          </p>
+         </div>
+
+         <footer class="lista-card__footer">
+          <span
+           class="btn btn--primary btn--abrir text-center js-details"
+           data-id="${list.id}"
+           >Abrir</span
+          >
+          <div class="lista-card__acoes">
+           <button
+            title="Favoritar"
+            aria-label="Favoritar"
+            class="js-favorite"
+            data-id="${list.id}"
+            type="button"
+           >
+            <i class="ph ph-heart"></i>
+           </button>
+           <button
+            title="Arquivar"
+            aria-label="Arquivar"
+            class="js-archived"
+            data-id="${list.id}"
+            type="button"
+           >
+            <i class="ph ph-box-arrow-up"></i>
+           </button>
+           <button
+            title="Editar"
+            class="js-edit"
+            data-id="${list.id}"
+            type="button"
+            aria-label="Editar lista"
+           >
+            <i class="ph ph-pencil"></i>
+           </button>
+           <button
+            title="Duplicar"
+            class="js-duplicate"
+            data-id="${list.id}"
+            type="button"
+            aria-label="Duplicar"
+           >
+            <i class="ph ph-copy"></i>
+           </button>
+           <button
+            title="Excluir"
+            aria-label="Excluir lista"
+            type="button"
+            class="js-delete"
+            data-id="${list.id}"
+           >
+            <i class="ph ph-trash"></i>
+           </button>
           </div>
-          <button class="menu_button">⋯</button>
-          <div class="dropdown">
-          <!--  
-          <button class="toShare" data-id="${list.id}">
-              <i class="ph ph-upload-simple"></i>
-              Compartilhar
-            </button>--> 
-            <button class="toEdit" data-id="${list.id}" type="button" aria-label="Editar lista">
-              <i class="ph ph-pencil-simple-line"></i>
-              Renomear
-            </button>        
-            <button class="toDelete" data-id="${list.id}"
-            type="button" aria-label="Excluir lista">
-              <i class="ph ph-trash"></i>
-              Excluir
-            </button>
-          </div>
+         </footer>
         </li>
       `);
-      });
-      container.append(ul);
-    }
+   });
+   container.append(ul);
   }
+ }
 
-  bindDropdownEvents() {
-    $("#wrapper_lists").off("click", ".menu_button");
+ //  bindDropdownEvents() {
+ //   $("#js-lists").off("click", ".menu_button");
 
-    $("#wrapper_lists").on("click", ".menu_button", function (e) {
-      e.stopPropagation();
-      const dropdown = $(this).siblings(".dropdown");
+ //   $("#js-lists").on("click", ".menu_button", function (e) {
+ //    e.stopPropagation();
+ //    const dropdown = $(this).siblings(".dropdown");
 
-      $(".dropdown").not(dropdown).removeClass("active");
-      dropdown.toggleClass("active");
-    });
+ //    $(".dropdown").not(dropdown).removeClass("active");
+ //    dropdown.toggleClass("active");
+ //   });
 
-    $(document).off("click.dropdown").on("click.dropdown", function () {
-      $(".dropdown").removeClass("active");
-    });
-  }
-  onDeleteClick(callback) {
-    $("#wrapper_lists").on("click", ".toDelete", function () {
-      const id = $(this).data("id");
-      callback(id);
-    });
-  }
-  onEditClick(callback) {
-    $("#wrapper_lists").on("click", ".toEdit", function () {
-      const id = $(this).data("id");
-      callback(id);
-    });
-  }
-  onListClick(callback) {
-    $(document).on('click', '.toDetails', function () {
-      const id = $(this).data('id');
-      callback(id);
-    });
-  }
+ //   $(document)
+ //    .off("click.dropdown")
+ //    .on("click.dropdown", function () {
+ //     $(".dropdown").removeClass("active");
+ //    });
+ //  }
+ onDeleteClick(callback) {
+  $("#js-lists").on("click", ".js-delete", function () {
+   const id = $(this).data("id");
+   callback(id);
+  });
+ }
+ onDuplicateClick(callback) {
+  $("#js-lists").on("click", ".js-duplicate", function () {
+   const id = $(this).data("id");
+   callback(id);
+  });
+ }
+ onFavoriteClick(callback) {
+  $("#js-lists").on("click", ".js-favorite", function () {
+   const id = $(this).data("id");
+   callback(id);
+  });
+ }
+ onEditClick(callback) {
+  $("#js-lists").on("click", ".js-edit", function () {
+   const id = $(this).data("id");
+   callback(id);
+  });
+ }
+ onArchivedClick(callback) {
+  $("#js-lists").on("click", ".js-archived", function () {
+   const id = $(this).data("id");
+   callback(id);
+  });
+ }
+ onListClick(callback) {
+  $(document).on("click", ".js-details", function () {
+   const id = $(this).data("id");
+   callback(id);
+  });
+ }
 }

@@ -1,27 +1,24 @@
 :root {
-  --color-bg-primary: #ebe8e8;
-  --color-bg-secondary: #f5f5f5;
-  --color-text-primary: #212121;
-  --color-text-secondary: #a0a0a0;
-  --color-border: #e0e0e0;
-  --color-accent: #28a745;
-  --color-danger: #e34e4e;
-  --color-success: #d1f7d1;
-  --color-white: #fff;
-  --color-info: #007BFF;
-  --color-red-light: #bf3b4480;
+ --color-bg-primary: #eceff1;
+ --color-bg-secondary: #ffffff;
+ --color-text-primary: #121212;
+ --color-text-secondary: #4d4d4d;
+ --color-border: #c0c6cc;
+ --color-border-hover: #aab4be;
+ --color-white: #fff;
+ --color-success: #1bc75a;
+ --color-info: #3398db;
+ --color-danger: #e34f53;
+ --color-bg-danger: #dc3545;
+ --color-favorite: #f97316;
+
 }
 
-/* Paleta de Cores - Tema Escuro */
 body.dark_mode {
-  --color-bg-primary: #1e1e1e;
-  --color-bg-secondary: #2c2c2c;
-  --color-text-primary: #f0f0f0;
-  --color-text-secondary: #a0a0a0;
-  --color-border: #444444;
-  --color-accent: #62b662;
-  --color-danger: #e34e4e;
-  --color-info: #2f72ee;
-  --color-success: #0b580b;
-
+ --color-bg-primary: #121212;
+ --color-bg-secondary: #1c1c1c;
+ --color-text-primary: #e0e0e0;
+ --color-text-secondary: #b0b0b0;
+ --color-border: #333333;
+ --color-border-hover: #444444;
 }

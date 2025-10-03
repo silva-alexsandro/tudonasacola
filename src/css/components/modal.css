@@ -1,7 +1,25 @@
 .modal {
+ z-index: 9990;
+ position: fixed;
+ display: none;
+ inset: 0;
+}
+.modal__overlay {
+ z-index: 9992;
+ position: absolute;
+ inset: 0;
+ background: hsla(0, 0%, 50%, 0.2);
+}
+.modal__content {
+ position: absolute;
+ z-index: 9993;
+ background: var(--color-bg-secondary);
+ border-radius: var(--radius-sm);
+}
+
+/* .modal {
   position: fixed;
   inset: 0;
-  display: none;
   align-items: center;
   justify-content: center;
   z-index: 1000;
@@ -85,7 +103,7 @@
   text-align: end;
   margin-top: var(--space-sm);
 }
-/* Animação de aparecimento */
+/* Animação de aparecimento
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -116,4 +134,4 @@
   .modal__content {
     padding: var(--space-md);
   }
-}
+} */
