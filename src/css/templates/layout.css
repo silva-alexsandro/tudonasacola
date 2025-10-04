@@ -1,9 +1,10 @@
-@import url('../components/button.css');
-@import url('../components/navbar.css');
-@import url('../components/card.css');
-@import url('../components/circle.css');
-@import url('../components/modal.css');
-@import url('../components/toggleTheme.css');
+@import url("../components/button.css");
+@import url("../components/navbar.css");
+@import url("../components/card.css");
+@import url("../components/circle.css");
+@import url("../components/modal.css");
+@import url("../components/loading.css");
+@import url("../components/toggleTheme.css");
 
 .layout-base {
  display: grid;
@@ -48,12 +49,24 @@
  margin-left: var(--space-xs);
 }
 
+.nav_item .btn {
+ font-size: var(--space-16);
+}
+
+.nav_item .btn:hover {
+ color: var(--color-success);
+}
+
+
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 }
 
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+ i {
+  font-size: var(--space-20);
+ }
 }
 
 /* // Large devices (desktops, 992px and up) */

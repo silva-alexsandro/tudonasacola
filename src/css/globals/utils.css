@@ -32,6 +32,30 @@
 .font-size-xxl {
  font-size: clamp(4rem, 3.6rem + 1.2vw, 4.8rem); /* ~40–48px */
 }
+.box-shadow {
+ border-radius: var(--radius-sm);
+ transition: all 0.2s ease-in-out;
+ box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.7);
+ -webkit-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.7);
+ -moz-box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+.box-shadow:hover {
+ box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.7);
+ -webkit-box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.7);
+ -moz-box-shadow: 0px 0px 0px 0.5px rgba(0, 0, 0, 0.7);
+}
+body.dark_mode .box-shadow {
+ transition: all 0.2s ease-in-out;
+ border-radius: var(--radius-sm);
+ box-shadow: 0px 1px 1px 1px rgba(255, 255, 255, 0.7);
+ -webkit-box-shadow: 0px 1px 1px 1px rgba(255, 255, 255, 0.7);
+ -moz-box-shadow: 0px 1px 1px 1px rgba(255, 255, 255, 0.7);
+}
+body.dark_mode .box-shadow:hover {
+ box-shadow: 0px 0px 0px 0.5px rgba(255, 255, 255, 0.7);
+ -webkit-box-shadow: 0px 0px 0px 0.5px rgba(255, 255, 255, 0.7);
+ -moz-box-shadow: 0px 0px 0px 0.5px rgba(255, 255, 255, 0.7);
+}
 
 .bg-gradient {
  background: linear-gradient(135deg, #d6ff57 0%, #00c853 100%);
@@ -52,13 +76,7 @@
 .text-highighlight {
  color: var(--color-success);
 }
-.icon {
- font-weight: 500;
- font-size: 1.6rem;
-}
-.js-actions {
- cursor: pointer;
-}
+
 .m-0 {
  margin: var(--space-0);
 }

@@ -23,7 +23,7 @@ export function loadInLocalStorageItem(key) {
     if (!valorSerializado) { return null };
     return JSON.parse(valorSerializado);
   } catch (error) {
-    console.error('Erro ao pegar item do localStorage:', error);
+    console.log('Erro ao pegar item do localStorage:', error);
     return null;
   }
 }

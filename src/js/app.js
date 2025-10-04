@@ -8,10 +8,10 @@ $(document).ready(function () {
   const modalController = new ModalController();
   const themeController = new ThemeDarkController();
   const lists = new ListController();
-  const dash = new DashboardController();
+  // const dash = new DashboardController();
 
   modalController.initEvents();
-  lists.init();
   themeController.init();
-  dash.init();
+  lists.init();
+  // dash.init();
 });

@@ -1,0 +1,133 @@
+.grid {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(220px, 1fr));
+ gap: var(--gap);
+ width: min(1100px, 100%);
+}
+
+/* Card */
+.card {
+ background: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0.02),
+  rgba(255, 255, 255, 0.01)
+ );
+ border: 1px solid rgba(255, 255, 255, 0.035);
+ border-radius: var(--radius);
+ padding: 18px;
+ min-height: 160px;
+ box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+ overflow: hidden;
+ position: relative;
+ -webkit-backdrop-filter: blur(4px);
+ backdrop-filter: blur(4px);
+}
+
+/* Skeleton shapes */
+.skeleton {
+ background: linear-gradient(
+  90deg,
+  var(--skeleton) 0%,
+  var(--skeleton-highlight) 40%,
+  var(--skeleton) 100%
+ );
+ background-size: 200% 100%;
+ animation: shimmer 1.25s linear infinite;
+ border-radius: 8px;
+ display: block;
+}
+
+.card-head {
+ display: flex;
+ gap: 12px;
+ align-items: center;
+ margin-bottom: 12px;
+}
+
+.avatar {
+ width: 56px;
+ height: 56px;
+ border-radius: 12px;
+ flex: 0 0 56px;
+}
+
+.title {
+ height: 16px;
+ width: 55%;
+}
+
+.meta {
+ height: 10px;
+ width: 30%;
+ margin-top: 8px;
+ border-radius: 6px;
+}
+
+.content-line {
+ height: 12px;
+ border-radius: 8px;
+ margin-bottom: 10px;
+}
+
+.content-line.wide {
+ width: 90%;
+}
+.content-line.mid {
+ width: 70%;
+}
+.content-line.short {
+ width: 45%;
+}
+
+.footer {
+ display: flex;
+ gap: 12px;
+ align-items: center;
+ margin-top: 10px;
+}
+
+.btn {
+ height: 36px;
+ width: 110px;
+ border-radius: 10px;
+}
+
+.icon {
+ width: 36px;
+ height: 36px;
+ border-radius: 8px;
+ margin-left: auto;
+}
+
+/* Shimmer keyframes */
+@keyframes shimmer {
+ 0% {
+  background-position: 200% 0;
+ }
+ 100% {
+  background-position: -200% 0;
+ }
+}
+
+/* Responsive */
+@media (max-width: 920px) {
+ .grid {
+  grid-template-columns: repeat(2, 1fr);
+ }
+}
+@media (max-width: 560px) {
+ .grid {
+  grid-template-columns: 1fr;
+ }
+ body {
+  padding: 20px;
+ }
+}
+
+/* Acessibilidade: reduzir animação se o usuário preferir */
+@media (prefers-reduced-motion: reduce) {
+ .skeleton {
+  animation: none;
+  opacity: 0.95;
+ }
+}

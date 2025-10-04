@@ -58,8 +58,42 @@
       />
      </a>
      <ul class="navbar_nav">
-      <li class="nav_item toggle">
+      <!-- 
+      PARA UM HISTORICO DE LISTAS ?  
+      <li class="nav_item box-shadow">
+       <a href="#" class="btn flex flex-center flex-nowrap gap-4">
+        <i class="ph ph-chart-line-up"></i>
+        <span> Historico </span>
+       </a>
+      </li>
+
+      PARA ARQUIVADAS
+      <li class="nav_item box-shadow">
+       <a
+        href="./archived.html"
+        class="btn flex flex-center flex-nowrap gap-4"
+        title="Arquivadas"
+       >
+        <i class="ph ph-box-arrow-down"></i>
+        <span> Arquivadas </span>
+       </a>
+      </li>
+ -->
+      <li class="nav_item box-shadow">
+       <button
+        id="js-createList"
+        class="btn flex flex-center flex-nowrap gap-4"
+        title="Criar nova lista"
+        aria-label="Criar nova lista"
+       >
+        <i class="ph ph-list-plus"></i>
+        <span>Nova Lista</span>
+       </button>
+      </li>
+
+      <li class="nav_item box-shadow">
        <label
+        class="btn toggle"
         for="switchThemeDark"
         title="Alternar tema"
         aria-label="Alternar entre modo claro e escuro"
@@ -68,59 +102,18 @@
         <i id="js-theme" class="ph"></i>
        </label>
       </li>
-      <!-- <li class="nav_item">
-       <a
-        href="#"
-        class="btn btn--secondary flex flex-center gap-4"
-       >
-        <i class="ph ph-chart-line-up"></i>
-        <span>  </span>
-       </a>
-      </li> -->
-      <li class="nav_item">
-       <a
-        href="./archived.html"
-        class="btn btn--secondary flex flex-center gap-4"
-        title="Arquivadas"
-       >
-        <i class="ph ph-box-arrow-down icon"></i>
-        <span> Arquivadas </span>
-       </a>
-      </li>
-      <li class="nav_item">
-       <button
-        id="js-createList"
-        class="btn btn--primary flex flex-center gap-4"
-        title="Criar nova lista"
-        aria-label="Criar nova lista"
-       >
-        <i class="ph ph-plus icon"></i>
-        <span>Nova Lista</span>
-       </button>
-      </li>
      </ul>
     </nav>
    </header>
 
    <main>
-    <section class="mt-24"></section>
     <section class="mt-24">
      <div class="limit-viewport">
-      <div class="mb-8 flex flex-between">
+      <div class="mb-4 flex flex-between">
        <h2 class="font-size-md font-weight-bold">Minhas Listas</h2>
-
-       <button
-        aria-label="Excluir todas as listas"
-        title="Excluir todas as listas"
-        class="flex flex-center gap-4 btn btn--delete"
-       >
-        <i class="ph ph-trash icon"></i>
-        <span>Excluir Listas</span>
-       </button>
       </div>
       <section id="js-lists">
        <!-- bloco inserido via js -->
-       
       </section>
      </div>
     </section>
@@ -148,6 +141,34 @@
     </div>
    </footer>
   </div>
+  <!-- modal -->
+  <div
+   class="modal"
+   role="dialog"
+   aria-modal="true"
+   aria-labelledby="modalTitle"
+  >
+   <div class="modal__content">
+    <div class="modal__content__header">
+     <button
+      id="close_modal"
+      class="modal__content__close"
+      aria-label="Fechar modal"
+     >
+      &times;
+     </button>
+    </div>
+    <div class="modal__content__body"></div>
+   </div>
+  </div>
+  <!-- modal -->
+
+  <!-- loading da pagina 
+  <div id="loading">
+   <div class="custom-loader"></div>
+   <p>Aguenta aí, tô buscando seus dados...</p>
+  </div>
+  loading da pagina -->
   <script type="module" src="../src/js/app.js" defer></script>
  </body>
 </html>

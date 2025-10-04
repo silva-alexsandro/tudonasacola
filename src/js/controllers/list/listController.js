@@ -56,9 +56,8 @@ export class ListController {
  async refreshView() {
   try {
    const listas = await this.listModel.getAll();
-   // listas.sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate));
    this.listView.render(listas);
-   this.listView.bindDropdownEvents();
+//    this.listView.bindDropdownEvents();
   } catch (error) {
    console.error("Erro ao carregar listas:", error);
   }

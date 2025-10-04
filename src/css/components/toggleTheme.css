@@ -11,9 +11,3 @@
 .toggle .hidden {
  display: none;
 }
-#js-theme {
- cursor: pointer;
-}
-#js-theme:hover {
- color: var(--color-success);
-}

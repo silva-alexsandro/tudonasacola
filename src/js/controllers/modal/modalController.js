@@ -10,6 +10,7 @@ export class ModalController {
     this.view = new ModalView();
 
     this.view.openModal(() => {
+      console.log('open modal')
       this.view.createContentInModal();
       this.view.show();
       this.handleCommonEvents("create");

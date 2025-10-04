@@ -1,5 +1,5 @@
 .navbar {
- padding: var(--space-4) var(--space-8) !important;
+ padding: var(--space-8) !important;
 }
 
 .navbar_brand {
@@ -28,26 +28,3 @@
  justify-content: center;
  gap: var(--space-16);
 }
-
-/*
-
-
-.navbar_brand span {
-  width: 7rem;
-  font-weight: 500;
-  word-wrap: break-word;
-  text-transform: capitalize;
-}
-
-.navbar_brand i {
-  font-size: 4rem;
-  color: var(--color-accent);
-}
-
-
-@media (min-width:375px) {
-  .navbar_brand span {
-    width: 10rem;
-    font-size: 1.8rem;
-  }
-} */
