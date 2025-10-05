@@ -6,12 +6,12 @@
  --color-border: #c0c6cc;
  --color-border-hover: #aab4be;
  --color-white: #fff;
+ --color-success-ligth: rgba(27, 199, 90, 0.5);
  --color-success: #1bc75a;
  --color-info: #3398db;
  --color-danger: #e34f53;
  --color-bg-danger: #dc3545;
  --color-favorite: #f97316;
-
 }
 
 body.dark_mode {

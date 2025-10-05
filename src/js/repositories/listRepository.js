@@ -1,49 +1,65 @@
-import { openDB } from '../db/indexdb.js';
-import {
- loadInLocalStorageItem,
- saveInLocalStorage,
-} from '../db/handleLocalStorage.js';
+import { saveInLocalStorage } from '../db/handleLocalStorage.js';
 import { getOwner } from '../utils/getOwner.js';
 
 const STORE_NAME = 'list';
 const BASE_URL = 'https://apitudonasacola.onrender.com';
-const loading = $('#loading');
+
 export class ListRepository {
  async getAll() {
+  const url = `${BASE_URL}/${STORE_NAME}`;
+  const owner = getOwner()?.trim();
+  const headers = { Authorization: `Bearer ${owner}` };
   try {
-   loading.fadeIn();
-   const owner = getOwner()?.trim();
    const data = await $.ajax({
-    url: `${BASE_URL}/${STORE_NAME}`,
+    url,
     method: 'GET',
-    headers: { Authorization: `Bearer ${owner}` },
+    headers,
+    contentType: 'application/json',
    });
    return data;
-  } catch (err) {
-   console.log('retorno de get da api: erro - ', err);
-   throw err;
+  } catch (e) {
+   throw e;
+  }
+ }
+
+ async getAllArchived() {
+  const url = `${BASE_URL}/${STORE_NAME}/archived`;
+  const owner = getOwner()?.trim();
+  const headers = { Authorization: `Bearer ${owner}` };
+  try {
+   const data = await $.ajax({
+    url,
+    method: 'GET',
+    headers,
+    contentType: 'application/json',
+   });
+   return data;
+  } catch (e) {
+   throw e;
   }
  }
 
  async getById(id) {
+  const url = `${BASE_URL}/${STORE_NAME}/${id}`;
+  const owner = getOwner()?.trim();
+  const headers = { Authorization: `Bearer ${owner}` };
   try {
-   loading.fadeIn();
    const owner = getOwner()?.trim();
    const data = await $.ajax({
-    url: `${BASE_URL}/${STORE_NAME}/${id}`,
+    url,
     method: 'GET',
-    headers: { Authorization: `Bearer ${owner.trim()}` },
+    headers,
+    contentType: 'application/json',
    });
    return data;
   } catch (err) {
+   console.log('getbyid no bancon com erro: ', err);
    throw err;
   } finally {
-   loading.fadeOut();
   }
  }
 
  async add(listModel) {
-  loading.fadeIn();
   const owner = getOwner()?.trim();
   const url = `${BASE_URL}/${STORE_NAME}`;
 
@@ -64,10 +80,10 @@ export class ListRepository {
     data: JSON.stringify(listModel),
    });
 
-   console.log('valor de data: ', data)
+   console.log('valor de data: ', data);
 
-   if (data?.owner) {
-    saveInLocalStorage('owner-id', data.owner);
+   if (data?.ownerId) {
+    saveInLocalStorage('owner-id', data.ownerId);
    }
 
    return data;
@@ -75,13 +91,11 @@ export class ListRepository {
    console.log('[ERRO] Falha ao criar lista:', error);
    throw error;
   } finally {
-   loading.fadeOut();
   }
  }
 
  async update(id, listModel) {
   try {
-   loading.fadeIn();
    const owner = getOwner()?.trim();
    const data = await $.ajax({
     url: `${BASE_URL}/${STORE_NAME}/${id}`,
@@ -95,13 +109,11 @@ export class ListRepository {
    console.error(`Erro ao atualizar lista ${id}:`, err);
    throw err;
   } finally {
-   loading.fadeOut();
   }
  }
 
  async delete(id) {
   try {
-   loading.fadeIn();
    const owner = getOwner()?.trim();
    const data = await $.ajax({
     url: `${BASE_URL}/${STORE_NAME}/${id}`,
@@ -113,7 +125,6 @@ export class ListRepository {
    console.error(`Erro ao deletar lista ${id}:`, err);
    throw err;
   } finally {
-   loading.fadeOut();
   }
  }
 }

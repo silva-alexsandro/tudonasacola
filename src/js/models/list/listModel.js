@@ -1,18 +1,24 @@
 import { ListRepository } from '../../repositories/listRepository.js';
 import { ListSchema } from '../../schemas/list.js';
 
+const loading = $('#loading');
+
 export class ListModel {
  constructor() {
   this.repo = new ListRepository();
  }
 
  async getAll() {
+  loading.fadeIn();
   try {
    return await this.repo.getAll();
-  } catch {
-   return [];
+  } catch (err) {
+   if (err.status == 401 || err.status == 400 || err.status == 404) {
+    return [];
+   }
+   throw err;
   } finally {
-   $('#loading').fadeOut();
+   loading.fadeOut();
   }
  }
 
@@ -24,10 +30,10 @@ export class ListModel {
   console.log('vou criar uma lista');
   const listData = new ListSchema(nome);
   const errors = listData.validate();
-  console.log('erros? ', errors)
+  console.log('erros? ', errors);
   if (errors.length > 0) throw new Error(errors.join('\n'));
-  
-  console.log('lista dados model ', listData)
+
+  console.log('lista dados model ', listData);
   return await this.repo.add(listData);
  }
 

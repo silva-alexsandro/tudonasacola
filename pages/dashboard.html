@@ -54,20 +54,18 @@
      >
       <img
        src="../src/assets/img/logo.png"
+       class="logo"
        alt="Logo da aplicação Tudo na Sacola, um serviço para organizar suas compras de forma inteligente"
       />
      </a>
      <ul class="navbar_nav">
-      <!-- 
-      PARA UM HISTORICO DE LISTAS ?  
-      <li class="nav_item box-shadow">
+      <!-- <li class="nav_item box-shadow">
        <a href="#" class="btn flex flex-center flex-nowrap gap-4">
         <i class="ph ph-chart-line-up"></i>
         <span> Historico </span>
        </a>
       </li>
 
-      PARA ARQUIVADAS
       <li class="nav_item box-shadow">
        <a
         href="./archived.html"
@@ -77,8 +75,8 @@
         <i class="ph ph-box-arrow-down"></i>
         <span> Arquivadas </span>
        </a>
-      </li>
- -->
+      </li> -->
+
       <li class="nav_item box-shadow">
        <button
         id="js-createList"
@@ -107,10 +105,15 @@
    </header>
 
    <main>
-    <section class="mt-24">
+    <section class="mt-20">
      <div class="limit-viewport">
       <div class="mb-4 flex flex-between">
-       <h2 class="font-size-md font-weight-bold">Minhas Listas</h2>
+       <div>
+        <h2 class="font-size-md font-weight-bold">Suas Listas</h2>
+        <p class="font-size-sm">
+         Gerencie suas listas de compras de forma inteligente
+        </p>
+       </div>
       </div>
       <section id="js-lists">
        <!-- bloco inserido via js -->
@@ -163,12 +166,13 @@
   </div>
   <!-- modal -->
 
-  <!-- loading da pagina 
+  <!-- loading da pagina -->
   <div id="loading">
    <div class="custom-loader"></div>
    <p>Aguenta aí, tô buscando seus dados...</p>
   </div>
-  loading da pagina -->
+  <!-- loading da pagina -->
   <script type="module" src="../src/js/app.js" defer></script>
+  <script type="module" src="../src/js/script-list.js" defer></script>
  </body>
 </html>

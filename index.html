@@ -14,6 +14,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
   <title>Tudo na sacola</title>
+  <!-- pwa -->
+  <link rel="manifest" href="./manifest.json" />
+  <script>
+   if (typeof navigator.serviceWorker !== 'undefined') {
+    navigator.serviceWorker.register('pwabuilder-sw.js');
+   }
+  </script>
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

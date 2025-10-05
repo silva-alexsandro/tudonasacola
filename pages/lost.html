@@ -13,7 +13,7 @@
   />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="index, follow" />
-  <title>Tudo na sacola | dashboard</title>
+  <title>Tudo na sacola | errors</title>
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,87 +48,30 @@
    <header class="border-bottom border-solid border-current">
     <nav class="navbar limit-viewport flex flex-between">
      <a
-      id="navbar__page-item"
       href="./dashboard.html"
-      class="flex flex-center gap-4"
+      class="navbar_brand"
       aria-label="Ir para a página inicial"
      >
-      <i class="ph ph-arrow-left"></i>
       <img
        src="../src/assets/img/logo.png"
        class="logo"
        alt="Logo da aplicação Tudo na Sacola, um serviço para organizar suas compras de forma inteligente"
       />
      </a>
-     <h2 class="text-elipse"></h2>
     </nav>
    </header>
-   <main>
-    <section class="mt-20">
-     <div id="stats" class="limit-viewport">
-      <article id="totalItem" class="stat__box shadow"></article>
-      <article id="itemDone" class="stat__box shadow"></article>
-      <article id="preco" class="stat__box shadow"></article>
-     </div>
-    </section>
+   <main class="bg-secondary">
     <section class="mt-20">
      <div class="limit-viewport">
-      <section id="wrapperItem" class="cards"></section>
+      <article
+       id="js-page-errs"
+       class="flex flex-center flex-column gap-8"
+      ></article>
      </div>
     </section>
    </main>
-
-   <footer class="mt-4 border-2-top border-solid border-current p-8">
-    <div class="limit-viewport flex flex-between">
-     <p class="font-size-sm text-color-secondary">
-      Desenvolvidor por
-      <a
-       href="https://www.linkedin.com/in/dasilva-alexsandro/"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="text-underline"
-      >
-       Alexsandro Silva
-      </a>
-     </p>
-     <p class="font-size-sm text-color-secondary">
-      Gostou da aplicação e gostaria de contribuir
-      <span id="js-modal-kitty" class="js-actions">
-       <i class="ph ph-coffee"></i>
-      </span>
-     </p>
-    </div>
-   </footer>
   </div>
-  <!-- modal -->
-  <div
-   class="modal"
-   role="dialog"
-   aria-modal="true"
-   aria-labelledby="modalTitle"
-  >
-   <div class="modal__content">
-    <div class="modal__content__header">
-     <button
-      id="close_modal"
-      class="modal__content__close"
-      aria-label="Fechar modal"
-     >
-      &times;
-     </button>
-    </div>
-    <div class="modal__content__body"></div>
-   </div>
-  </div>
-  <!-- modal -->
-
-  <!-- loading da pagina 
-  <div id="loading">
-   <div class="custom-loader"></div>
-   <p>Aguenta aí, tô buscando seus dados...</p>
-  </div>
-  loading da pagina -->
+  <script type="module" src="../src/js/scripts/pages/lost.js" defer></script>
   <script type="module" src="../src/js/app.js" defer></script>
-  <script type="module" src="../src/js/script-itens.js" defer></script>
  </body>
 </html>

@@ -7,7 +7,7 @@ export class ListView {
   if (lists.length === 0) {
    container.append(`
       <article
-        class="bg-secondary border-2 border-current border-dashed mt-40 flex flex-column flex-center p-24"
+        class="bg-secondary border-2 border-current border-dashed mt-16 flex flex-column flex-center p-24"
        >
         <div class="circle circle__border">
          <i class="ph ph-list-magnifying-glass"></i>
@@ -22,13 +22,13 @@ export class ListView {
        </article>
     `);
   } else {
-   const ul = $("<ul class='grid fill scroll_ghost pb-20'></ul>");
+   const ul = $("<ul class='grid fill scroll_ghost pt-16 pb-20'></ul>");
    lists.forEach((list) => {
     const formattedDate = formatShortDate(list.createdDate);
     ul.append(`
         <li class="lista-card">
          <div class="lista-card__header">
-          <h2 class="sub-title" title="${list.name}">${list.name}</h2>
+          <h2 class="sub-title font-weigth-bold" title="${list.name}">${list.name}</h2>
           <span class="lista-card-favorite" aria-label="Lista favoritada">
            <i class="ph ph-heart"></i>
           </span>

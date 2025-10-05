@@ -10,12 +10,13 @@
  height: 5rem;
  overflow: hidden;
 }
-
-.navbar_brand img {
+.logo {
  -moz-transform: scaleX(-1);
  -o-transform: scaleX(-1);
  -webkit-transform: scaleX(-1);
  transform: scaleX(-1);
+}
+.navbar_brand img {
  display: block;
  object-fit: contain;
  width: 100%;
@@ -27,4 +28,22 @@
  align-items: center;
  justify-content: center;
  gap: var(--space-16);
+}
+
+#navbar__page-item {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+#navbar__page-item i {
+ transition: all 0.2s ease-in;
+ padding: var(--space-4) var(--space-16);
+}
+#navbar__page-item i:hover {
+ background: var(--color-success-ligth);
+ color: var(--color-white);
+ border-radius: var(--radius-xs);
+}
+#navbar__page-item img {
+ width: 5rem;
 }

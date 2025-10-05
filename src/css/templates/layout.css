@@ -5,6 +5,7 @@
 @import url("../components/modal.css");
 @import url("../components/loading.css");
 @import url("../components/toggleTheme.css");
+@import url("../pages/listdetail.css");
 
 .layout-base {
  display: grid;
@@ -75,15 +76,15 @@
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
- .limit-viewport {
-  padding: var(--space-0);
-  max-width: 1200px;
-  margin: 0 auto;
- }
 }
 
 /* // XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
+  .limit-viewport {
+  padding: var(--space-16);
+  max-width: 1400px;
+  margin: 0 auto;
+ }
 }
 
 /*

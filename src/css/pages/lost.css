@@ -1,0 +1,22 @@
+#js-page-errs h1 {
+ font-weight: 600;
+ color: var(--color-danger);
+}
+#js-page-errs .sub-title {
+ font-weight: 500;
+}
+#js-page-errs p {
+ color: var(--color-text-secondary);
+}
+#js-page-errs #message {
+ font-weight: 300;
+}
+#js-page-errs p a {
+ color: var(--color-white);
+ display: inline-flex;
+ align-items: center;
+ gap: var(--space-8);
+ border-radius: var(--radius-sm);
+ padding: var(--space-8);
+ background: var(--color-success-ligth);
+}
