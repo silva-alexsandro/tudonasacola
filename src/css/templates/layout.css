@@ -1,11 +1,11 @@
-@import url("../components/button.css");
-@import url("../components/navbar.css");
-@import url("../components/card.css");
-@import url("../components/circle.css");
-@import url("../components/modal.css");
-@import url("../components/loading.css");
-@import url("../components/toggleTheme.css");
-@import url("../pages/listdetail.css");
+@import url('../components/button.css');
+@import url('../components/navbar.css');
+@import url('../components/card.css');
+@import url('../components/circle.css');
+@import url('../components/modal.css');
+@import url('../components/loading.css');
+@import url('../components/toggleTheme.css');
+@import url('../pages/listdetail.css');
 
 .layout-base {
  display: grid;
@@ -58,7 +58,6 @@
  color: var(--color-success);
 }
 
-
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 }
@@ -76,15 +75,15 @@
 
 /* // X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-}
-
-/* // XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-  .limit-viewport {
-  padding: var(--space-16);
-  max-width: 1400px;
+ .limit-viewport {
+  padding: var(--space-0);
+  max-width: 1200px;
   margin: 0 auto;
  }
+}
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+ 
 }
 
 /*
